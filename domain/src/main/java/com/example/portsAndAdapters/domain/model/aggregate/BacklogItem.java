@@ -1,16 +1,19 @@
 package com.example.portsAndAdapters.domain.model.aggregate;
 
-import com.example.portsAndAdapters.domain.model.aggregate.Sprint;
 import com.example.portsAndAdapters.domain.model.base.BacklogItemStatus;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Generated;
+import lombok.Getter;
+import lombok.Setter;
 
-@RequiredArgsConstructor
+@Builder
 @Setter(AccessLevel.PRIVATE)
 @Getter
 public class BacklogItem {
 
     @Generated
-    private final Long id;
+    private Long id;
 
     private String itemName;
 
