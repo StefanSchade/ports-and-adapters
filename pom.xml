@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>Adapters</module>
+        <module>adapter</module>
         <module>domain</module>
         <module>application</module>
     </modules>
