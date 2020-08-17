@@ -5,7 +5,7 @@ import lombok.Generated;
 public abstract class BaseEntity {
 
     @Generated
-    public long id;
+    public Long id;
 
     protected BaseEntity() {
     }
