@@ -3,26 +3,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.example</groupId>
+    <artifactId>ports-and-adapters</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
     <modules>
         <module>adapter</module>
         <module>domain</module>
         <module>application</module>
     </modules>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.2.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-
-    </parent>
-    <groupId>com.example</groupId>
-    <artifactId>ports-and-adapters</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>ports-and-adapters</name>
-    <description>demo of hexagonal architecture in spring</description>
 
     <properties>
         <java.version>11</java.version>
@@ -43,17 +40,7 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-jersey</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-devtools</artifactId>
-                <scope>runtime</scope>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>com.h2database</groupId>
@@ -69,6 +56,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <scope>test</scope>
+                <version>${spring-boot.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.junit.vintage</groupId>
@@ -76,6 +64,7 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
