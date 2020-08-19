@@ -1,12 +1,15 @@
 package com.example.portsAndAdapters.domain.model.base;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @Getter
 public abstract class BaseEntity {
 
-    public final Long key;
+    private static long idcounter = 0;
 
+    public final Long id;
+
+    protected BaseEntity() {
+        id = ++idcounter;
+    }
 }
