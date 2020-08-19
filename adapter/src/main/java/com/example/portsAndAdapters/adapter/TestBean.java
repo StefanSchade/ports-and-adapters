@@ -1,6 +1,6 @@
 package com.example.portsAndAdapters.adapter;
 
-import com.example.portsAndAdapters.application.port.in.persistence.CRUDService;
+import com.example.portsAndAdapters.application.port.in.persistence.PersistenceAbstraction;
 import com.example.portsAndAdapters.domain.model.aggregate.BacklogItem;
 import com.example.portsAndAdapters.domain.model.aggregate.Sprint;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +10,10 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class TestBean {
 
-    private final CRUDService<Sprint> sprintCRUDService;
-    private final CRUDService<BacklogItem> backlogItemCRUDService;
+    private final PersistenceAbstraction<Sprint, com.example.portsAndAdapters.domain.model.base.BaseKey>
+            sprintPersistenceAbstraction;
+    private final PersistenceAbstraction<BacklogItem, com.example.portsAndAdapters.domain.model.base.BaseKey>
+            backlogItemPersistenceAbstraction;
 
     public void testcrudservices() {
         Sprint sprint1 = Sprint.builder()
@@ -47,13 +49,15 @@ public class TestBean {
         bli3.commitToSprint(sprint1);
 
 
-        System.out.println("Saving Sprint id:" + sprint1.getId() + " name; " + sprint1.getName());
-        sprintCRUDService.save(sprint1.getId(), sprint1);
+        System.out.println("Saving Sprint id:" + sprint1.getKey() + " name; " + sprint1.getName());
+        sprintPersistenceAbstraction.save(sprint1.getKey(), sprint1);
 
         System.out.println("Retrieving Sprint 1, committed story points = " +
-                sprintCRUDService.findByID(sprint1.getId())
-                                 .getTotalStoryPointsCommitted());
+                sprintPersistenceAbstraction.findByID(sprint1.getKey())
+                                            .getTotalStoryPointsCommitted());
 
     }
+
+
 
 }
