@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class GenericMapRepo<V extends BaseEntity, K> implements PersistenceAbstraction<V, K> {
+public class GenericMapRepo<V extends BaseEntity, K> implements PersistenceAbstraction<V, K> {
 
     protected Map<Long, V> map = new HashMap<>();
 
@@ -39,5 +39,4 @@ public abstract class GenericMapRepo<V extends BaseEntity, K> implements Persist
     public void deleteByID(K key) {
         map.remove(key);
     }
-
 }

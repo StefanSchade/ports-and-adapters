@@ -1,13 +1,14 @@
 package com.example.portsAndAdapters.domain.model.base;
 
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-@Setter(AccessLevel.PRIVATE)
+@SuperBuilder
 @Getter
 public abstract class BaseEntity {
 
-    public Long id;
+    private Long id;
+
+
 
 }
