@@ -1,9 +1,9 @@
 package com.example.portsandadapters.adapter;
 
-import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.CommandSprintCommitBacklogItem;
-import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.HandlerSprintCommitBacklogItem;
 import com.example.portsandadapters.application.port.in.command.CommandAbstraction;
 import com.example.portsandadapters.application.port.in.command.HandlerAbstraction;
+import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.CommandSprintCommitBacklogItem;
+import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.HandlerSprintCommitBacklogItem;
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.domain.model.aggregate.Sprint.BacklogItem;
 import com.example.portsandadapters.domain.model.aggregate.Sprint.Sprint;
@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 public class TestBean {
 
     private final PersistenceAbstraction<Sprint, Long> sprintPersistenceAbstraction;
+
 
     public void testcrudservices() {
         Sprint sprint1 = Sprint.builder()
@@ -51,22 +52,19 @@ public class TestBean {
         sprintPersistenceAbstraction.save(sprint2.getId(), sprint2);
         sprintPersistenceAbstraction.save(sprint3.getId(), sprint3);
 
-        HandlerAbstraction handlerAbstraction = HandlerSprintCommitBacklogItem.builder()
-                                                                              .aggregateRepository(
-                                                                                      sprintPersistenceAbstraction)
-                                                                              .build();
 
+        HandlerAbstraction handlerAbstraction = new HandlerSprintCommitBacklogItem(sprintPersistenceAbstraction);
         CommandAbstraction command = CommandSprintCommitBacklogItem.builder()
                                                                    .backlogItemid(1L)
                                                                    .sprintId(1L)
                                                                    .build();
 
         System.out.println("wert 1: " + sprintPersistenceAbstraction.findByID(1L)
-                                                                    .getRemainingStoryPointsCommited());
+                                                                      .getRemainingStoryPointsCommited());
         handlerAbstraction.handle(command);
 
         System.out.println("wert 2: " + sprintPersistenceAbstraction.findByID(1L)
-                                                                    .getRemainingStoryPointsCommited());
+                                                                                .getRemainingStoryPointsCommited());
 
     }
 
