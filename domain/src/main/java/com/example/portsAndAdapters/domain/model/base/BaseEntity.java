@@ -9,6 +9,4 @@ public abstract class BaseEntity {
 
     private Long id;
 
-
-
 }
