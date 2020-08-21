@@ -1,7 +1,7 @@
 package com.example.portsandadapters.domain.model.aggregate.Sprint;
 
-import com.example.portsandadapters.domain.model.base.AggregateRoot;
 import com.example.portsandadapters.domain.model.base.Entity;
+import com.example.portsandadapters.domain.model.base.AggregateRoot;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,7 @@ import java.util.List;
 @Setter(AccessLevel.PRIVATE)
 @Getter
 @SuperBuilder
-public class Sprint extends Entity implements AggregateRoot {
+public class Sprint extends AggregateRoot implements Entity {
 
     private double sprintCapacityInStoryPoints;
 

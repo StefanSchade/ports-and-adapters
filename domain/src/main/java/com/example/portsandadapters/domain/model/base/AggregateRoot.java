@@ -1,5 +1,12 @@
 package com.example.portsandadapters.domain.model.base;
 
-public interface AggregateRoot {
+import lombok.Getter;
+import lombok.experimental.SuperBuilder;
+
+@SuperBuilder
+@Getter
+public abstract class AggregateRoot {
+
+    private Long id;
 
 }

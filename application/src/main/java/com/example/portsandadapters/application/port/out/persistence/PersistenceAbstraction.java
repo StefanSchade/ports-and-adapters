@@ -1,10 +1,10 @@
 package com.example.portsandadapters.application.port.out.persistence;
 
-import com.example.portsandadapters.domain.model.base.Entity;
+import com.example.portsandadapters.domain.model.base.AggregateRoot;
 
 import java.util.Set;
 
-public interface PersistenceAbstraction<V extends Entity, K> {
+public interface PersistenceAbstraction<V extends AggregateRoot, K> {
 
     Set<V> findAll();
 

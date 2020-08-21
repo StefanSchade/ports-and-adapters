@@ -19,12 +19,6 @@ public class PersistenceConfig {
 
     @Bean
     @ConditionalOnProperty(value = "adaptertype", havingValue = "map", matchIfMissing = false)
-    public PersistenceAbstraction<BacklogItem, Long> createMapRepoBacklogItem(GenericRepoFactory factory) {
-        return factory.createMapRepo("map");
-    }
-
-    @Bean
-    @ConditionalOnProperty(value = "adaptertype", havingValue = "map", matchIfMissing = false)
     public PersistenceAbstraction<Sprint, Long> createMapRepoSprint(GenericRepoFactory factory) {
         return factory.createMapRepo("map");
     }

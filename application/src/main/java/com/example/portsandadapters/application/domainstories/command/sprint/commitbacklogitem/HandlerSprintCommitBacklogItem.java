@@ -12,16 +12,12 @@ public class HandlerSprintCommitBacklogItem implements HandlerAbstraction<Comman
 
     @NonNull private final PersistenceAbstraction<Sprint, Long> sprintRepo;
 
-    @NonNull private final PersistenceAbstraction<BacklogItem, Long> bliRepo;
-
     @Override
     public void handle(CommandSprintCommitBacklogItem command) {
 
         Sprint sprint = sprintRepo.findByID(command.getSprintId());
 
-        BacklogItem backlogItem = bliRepo.findByID(command.getBacklogItemid());
-
-        backlogItem.commitToSprint(sprint);
+  //      backlogItem.commitToSprint(sprint);
 
         sprintRepo.save(command.getSprintId(), sprint);
 

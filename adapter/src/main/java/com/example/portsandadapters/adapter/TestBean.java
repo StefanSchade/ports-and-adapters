@@ -16,7 +16,6 @@ public class TestBean {
 
     private final PersistenceAbstraction<Sprint, Long> sprintPersistenceAbstraction;
 
-    private final PersistenceAbstraction<BacklogItem, Long> backlogItemPersistenceAbstraction;
 
     public void testcrudservices() {
         Sprint sprint1 = Sprint.builder()
@@ -36,19 +35,16 @@ public class TestBean {
 
         BacklogItem bli1 = BacklogItem.builder()
                                       .name("bli 1")
-                                      .id(1L)
                                       .remainingStorypoints(1.1)
                                       .build();
 
         BacklogItem bli2 = BacklogItem.builder()
                                       .name("bli 1")
-                                      .id(2L)
                                       .remainingStorypoints(2.2)
                                       .build();
 
         BacklogItem bli3 = BacklogItem.builder()
                                       .name("bli 1")
-                                      .id(3L)
                                       .remainingStorypoints(3.3)
                                       .build();
 
@@ -56,11 +52,8 @@ public class TestBean {
         sprintPersistenceAbstraction.save(sprint2.getId(), sprint2);
         sprintPersistenceAbstraction.save(sprint3.getId(), sprint3);
 
-        backlogItemPersistenceAbstraction.save(bli1.getId(), bli1);
-        backlogItemPersistenceAbstraction.save(bli2.getId(), bli2);
-        backlogItemPersistenceAbstraction.save(bli3.getId(), bli3);
 
-        HandlerAbstraction handlerAbstraction = new HandlerSprintCommitBacklogItem(sprintPersistenceAbstraction, backlogItemPersistenceAbstraction);
+        HandlerAbstraction handlerAbstraction = new HandlerSprintCommitBacklogItem(sprintPersistenceAbstraction);
         CommandAbstraction command = CommandSprintCommitBacklogItem.builder()
                                                                    .backlogItemid(1L)
                                                                    .sprintId(1L)
