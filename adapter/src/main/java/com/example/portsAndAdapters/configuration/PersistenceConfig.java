@@ -1,8 +1,8 @@
 package com.example.portsAndAdapters.configuration;
 
 import com.example.portsAndAdapters.application.port.in.persistence.PersistenceAbstraction;
-import com.example.portsAndAdapters.domain.model.aggregate.BacklogItem;
-import com.example.portsAndAdapters.domain.model.aggregate.Sprint;
+import com.example.portsAndAdapters.domain.model.aggregate.Sprint.BacklogItem;
+import com.example.portsAndAdapters.domain.model.aggregate.Sprint.Sprint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

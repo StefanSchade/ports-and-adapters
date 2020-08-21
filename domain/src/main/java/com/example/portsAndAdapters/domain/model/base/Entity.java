@@ -5,7 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 @SuperBuilder
 @Getter
-public abstract class BaseEntity {
+public abstract class Entity {
 
     private Long id;
 

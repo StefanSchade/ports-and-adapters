@@ -1,14 +1,14 @@
 package com.example.portsAndAdapters.adapter.out.persistence.map;
 
 import com.example.portsAndAdapters.application.port.in.persistence.PersistenceAbstraction;
-import com.example.portsAndAdapters.domain.model.base.BaseEntity;
+import com.example.portsAndAdapters.domain.model.base.Entity;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class GenericMapRepo<V extends BaseEntity, K> implements PersistenceAbstraction<V, K> {
+public class GenericMapRepo<V extends Entity, K> implements PersistenceAbstraction<V, K> {
 
     protected Map<Long, V> map = new HashMap<>();
 

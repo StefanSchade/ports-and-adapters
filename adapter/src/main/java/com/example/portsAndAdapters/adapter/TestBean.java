@@ -1,8 +1,8 @@
 package com.example.portsAndAdapters.adapter;
 
 import com.example.portsAndAdapters.application.port.in.persistence.PersistenceAbstraction;
-import com.example.portsAndAdapters.domain.model.aggregate.BacklogItem;
-import com.example.portsAndAdapters.domain.model.aggregate.Sprint;
+import com.example.portsAndAdapters.domain.model.aggregate.Sprint.BacklogItem;
+import com.example.portsAndAdapters.domain.model.aggregate.Sprint.Sprint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

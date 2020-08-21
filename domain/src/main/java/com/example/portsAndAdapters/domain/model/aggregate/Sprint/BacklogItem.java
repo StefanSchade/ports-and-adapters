@@ -1,7 +1,6 @@
-package com.example.portsAndAdapters.domain.model.aggregate;
+package com.example.portsAndAdapters.domain.model.aggregate.Sprint;
 
-import com.example.portsAndAdapters.domain.model.base.BaseEntity;
-import com.example.portsAndAdapters.domain.model.value.BacklogItemStatus;
+import com.example.portsAndAdapters.domain.model.base.Entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Setter(AccessLevel.PRIVATE)
 @Getter
-public class BacklogItem extends BaseEntity {
+public class BacklogItem extends Entity {
 
     private String name;
 
