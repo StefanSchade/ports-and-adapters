@@ -1,14 +1,16 @@
 package com.example.portsandadapters.adapter;
 
-import com.example.portsandadapters.application.port.in.command.CommandAbstraction;
-import com.example.portsandadapters.application.port.in.command.HandlerAbstraction;
 import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.CommandSprintCommitBacklogItem;
 import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.HandlerSprintCommitBacklogItem;
+import com.example.portsandadapters.application.port.in.command.CommandAbstraction;
+import com.example.portsandadapters.application.port.in.command.HandlerAbstraction;
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.domain.model.aggregate.Sprint.BacklogItem;
 import com.example.portsandadapters.domain.model.aggregate.Sprint.Sprint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.TimeoutException;
 
 @Component
 @RequiredArgsConstructor
@@ -17,7 +19,13 @@ public class TestBean {
     private final PersistenceAbstraction<Sprint, Long> sprintPersistenceAbstraction;
 
 
-    public void testcrudservices() {
+    public void test() throws TimeoutException {
+
+        Sprint backlog = Sprint.builder()
+                               .name("Backlog")
+                               .id(0L)
+                               .build();
+
         Sprint sprint1 = Sprint.builder()
                                .name("Testsprint 01")
                                .id(1L)
@@ -48,12 +56,13 @@ public class TestBean {
                                       .remainingStorypoints(3.3)
                                       .build();
 
-        sprintPersistenceAbstraction.save(sprint1.getId(), sprint1);
-        sprintPersistenceAbstraction.save(sprint2.getId(), sprint2);
-        sprintPersistenceAbstraction.save(sprint3.getId(), sprint3);
+        backlog.addBacklogItem(bli1);
+        backlog.addBacklogItem(bli2);
+        backlog.addBacklogItem(bli3);
 
 
         HandlerAbstraction handlerAbstraction = new HandlerSprintCommitBacklogItem(sprintPersistenceAbstraction);
+
         CommandAbstraction command = CommandSprintCommitBacklogItem.builder()
                                                                    .backlogItemid(1L)
                                                                    .sprintId(1L)

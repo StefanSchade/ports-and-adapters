@@ -8,29 +8,57 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.util.LinkedList;
-import java.util.Set;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Setter(AccessLevel.PRIVATE)
 @Getter
 @SuperBuilder
 public class Sprint extends AggregateRoot implements Entity {
 
-    private double sprintCapacityInStoryPoints;
+    private final List<BacklogItem> backlogItems = new LinkedList<>();
 
-    private final Set<BacklogItem> committedBacklogItems = new LinkedList<>();
+    private Long id;
+
+    private double sprintCapacityInStoryPoints;
 
     private String name;
 
-    public void commitBacklogItem(BacklogItem backlogItem){
-        this.getCommittedBacklogItems().add(backlogItem);
+    public void addBacklogItem(BacklogItem backlogItem) {
+        this.getBacklogItems()
+            .add(backlogItem);
+    }
+
+    public void removeBacklogItemById(Long id) {
+        BacklogItem bli = this.getBacklogItemById(id);
+        this.getBacklogItems().remove(bli);
     }
 
     public double getRemainingStoryPointsCommited() {
-        return this.getCommittedBacklogItems().stream()
-                                        .mapToDouble(BacklogItem::getRemainingStorypoints)
-                                        .sum();
+        return this.getBacklogItems()
+                   .stream()
+                   .mapToDouble(BacklogItem::getRemainingStorypoints)
+                   .sum();
     }
 
+    public List<BacklogItem> getBacklogItemByName(String name) {
+        return this.getBacklogItems()
+                   .stream()
+                   .filter(bli -> bli.getName()
+                                     .equals(name))
+                   .collect(Collectors.toList());
+    }
 
+    public BacklogItem getBacklogItemById(Long id) {
+        List<BacklogItem> blilist;
+        blilist = this.getBacklogItems()
+                      .stream()
+                      .filter(bli -> bli.getId()==id)
+                      .collect(Collectors.toList());
+        if (blilist.size()!=1) {
+            throw new IllegalArgumentException("Backlogitem #" + id + " not found in Sprint #" + this.id);
+        }
+        return blilist.get(0);
+    }
 
 }

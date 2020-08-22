@@ -1,9 +1,11 @@
 package com.example.portsandadapters.adapter;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.concurrent.TimeoutException;
 
 @SpringBootTest
 class TestBeanTest {
@@ -11,14 +13,15 @@ class TestBeanTest {
     @Autowired
     public TestBean testBean;
 
-    @BeforeEach
-    void setUp() {
+    @BeforeAll
+    static void setUp() {
+
     }
 
     @Test
-    void testcrudservices() {
+    void test() throws TimeoutException {
 
-        testBean.testcrudservices();
+     //   testBean.test();
 
     }
 }

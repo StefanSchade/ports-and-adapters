@@ -1,6 +1,5 @@
 package com.example.portsandadapters.domain.model.aggregate.Sprint;
 
-import com.example.portsandadapters.domain.model.base.AggregateRoot;
 import com.example.portsandadapters.domain.model.base.Entity;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -12,6 +11,8 @@ import lombok.experimental.SuperBuilder;
 @Getter
 public class BacklogItem implements Entity {
 
+    private Long id;
+
     private String name;
 
     private double totalStorypoints;
@@ -20,9 +21,5 @@ public class BacklogItem implements Entity {
 
     private BacklogItemStatus status;
 
-    public void commitToSprint(Sprint sprint) {
-        setStatus(BacklogItemStatus.COMMITTED);
-        sprint.commitBacklogItem(this);
-    }
 
 }
