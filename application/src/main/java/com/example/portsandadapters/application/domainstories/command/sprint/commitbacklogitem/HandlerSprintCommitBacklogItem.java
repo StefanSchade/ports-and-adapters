@@ -16,7 +16,7 @@ public class HandlerSprintCommitBacklogItem implements HandlerAbstraction<Comman
 
         Sprint sprint = aggregateRepository.findByID(command.getSprintId());
 
-  //      backlogItem.commitToSprint(sprint);
+     //   backlogItem.commitToSprint(sprint);
 
         aggregateRepository.save(command.getSprintId(), sprint);
 
