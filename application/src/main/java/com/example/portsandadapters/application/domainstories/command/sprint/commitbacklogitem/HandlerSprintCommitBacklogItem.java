@@ -6,7 +6,9 @@ import com.example.portsandadapters.domain.model.aggregate.Sprint.BacklogItem;
 import com.example.portsandadapters.domain.model.aggregate.Sprint.Sprint;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 public class HandlerSprintCommitBacklogItem implements HandlerAbstraction<CommandSprintCommitBacklogItem> {
 
@@ -14,12 +16,16 @@ public class HandlerSprintCommitBacklogItem implements HandlerAbstraction<Comman
 
     @Override
     public void handle(CommandSprintCommitBacklogItem command) {
+
+        log.info("in command handler");
+        log.debug("debug");
+
         Sprint backlog = aggregateRepository.findByID(0L);
         Sprint sprint = aggregateRepository.findByID(command.getSprintId());
         BacklogItem bli = backlog.getBacklogItemById(command.getBacklogItemid());
-        backlog.removeBacklogItemById(command.getBacklogItemid());
-        sprint.addBacklogItem(bli);
-        aggregateRepository.save(0L, backlog);
-        aggregateRepository.save(command.getSprintId(), sprint);
+//        backlog.removeBacklogItemById(command.getBacklogItemid());
+//        sprint.addBacklogItem(bli);
+//        aggregateRepository.save(0L, backlog);
+//        aggregateRepository.save(command.getSprintId(), sprint);
     }
 }

@@ -1,7 +1,6 @@
 package com.example.portsandadapters.configuration;
 
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
-import com.example.portsandadapters.domain.model.aggregate.Sprint.BacklogItem;
 import com.example.portsandadapters.domain.model.aggregate.Sprint.Sprint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +18,7 @@ public class PersistenceConfig {
 
     @Bean
     @ConditionalOnProperty(value = "adaptertype", havingValue = "map", matchIfMissing = false)
-    public PersistenceAbstraction<Sprint, Long> createMapRepoSprint(GenericRepoFactory factory) {
+        public PersistenceAbstraction<Sprint, Long> mapRepoSprint(GenericRepoFactory factory) {
         return factory.createMapRepo("map");
     }
 
