@@ -12,15 +12,26 @@ import org.springframework.context.annotation.PropertySource;
 public class PersistenceConfig {
 
     @Bean
-    public GenericRepoFactory mapRepoFactoryBacklogItem() {
-        return new GenericRepoFactory();
+    public GenericMapServiceFactory mapRepoFactoryBacklogItem() {
+        return new GenericMapServiceFactory();
     }
+
+//    @Bean
+//    public GenericJPARepoFactory mapRepoFactoryBacklogItem() {
+//        return new GenericMapRepoFactory();
+//    }
 
     @Bean
     @ConditionalOnProperty(value = "adaptertype", havingValue = "map", matchIfMissing = false)
-        public PersistenceAbstraction<Sprint, Long> mapRepoSprint(GenericRepoFactory factory) {
-        return factory.createMapRepo("map");
+    public PersistenceAbstraction<Sprint, Long> mapRepoSprint(GenericMapServiceFactory factory) {
+        return factory.createMapRepo();
     }
+
+//    @Bean
+//    @ConditionalOnProperty(value = "adaptertype", havingValue = "map", matchIfMissing = false)
+//    public PersistenceAbstraction<Sprint, Long> jpaRepoSprint(GenericJPARepoFactory factory) {
+//        return factory.createJpaRepo();
+//    }
 
 
 

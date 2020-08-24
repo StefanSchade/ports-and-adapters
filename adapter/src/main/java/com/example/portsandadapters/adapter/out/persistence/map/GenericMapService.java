@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class GenericMapRepo<V extends AggregateRoot, K> implements PersistenceAbstraction<V, K> {
+public class GenericMapService<V extends AggregateRoot, K> implements PersistenceAbstraction<V, K> {
 
     protected Map<Long, V> map = new HashMap<>();
 
