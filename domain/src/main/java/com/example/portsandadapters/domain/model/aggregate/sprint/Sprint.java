@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.model.aggregate.Sprint;
+package com.example.portsandadapters.domain.model.aggregate.sprint;
 
 import com.example.portsandadapters.domain.model.base.AggregateRoot;
 import com.example.portsandadapters.domain.model.base.Entity;
@@ -60,5 +60,6 @@ public class Sprint extends AggregateRoot implements Entity {
         }
         return blilist.get(0);
     }
+
 
 }

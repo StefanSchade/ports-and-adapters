@@ -5,8 +5,8 @@ import com.example.portsandadapters.application.domainstories.command.sprint.com
 import com.example.portsandadapters.application.port.in.command.CommandAbstraction;
 import com.example.portsandadapters.application.port.in.command.HandlerAbstraction;
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
-import com.example.portsandadapters.domain.model.aggregate.Sprint.BacklogItem;
-import com.example.portsandadapters.domain.model.aggregate.Sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.sprint.BacklogItem;
+import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

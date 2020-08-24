@@ -1,7 +1,7 @@
 package com.example.portsandadapters.configuration;
 
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
-import com.example.portsandadapters.domain.model.aggregate.Sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

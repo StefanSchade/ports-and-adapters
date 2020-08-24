@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.model.aggregate.Sprint;
+package com.example.portsandadapters.domain.model.aggregate.sprint;
 
 import com.example.portsandadapters.domain.model.base.Entity;
 import lombok.AccessLevel;

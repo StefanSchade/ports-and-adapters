@@ -2,8 +2,8 @@ package com.example.portsandadapters.application.domainstories.command.sprint.co
 
 import com.example.portsandadapters.application.port.in.command.HandlerAbstraction;
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
-import com.example.portsandadapters.domain.model.aggregate.Sprint.BacklogItem;
-import com.example.portsandadapters.domain.model.aggregate.Sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.sprint.BacklogItem;
+import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,9 +23,9 @@ public class HandlerSprintCommitBacklogItem implements HandlerAbstraction<Comman
         Sprint backlog = aggregateRepository.findByID(0L);
         Sprint sprint = aggregateRepository.findByID(command.getSprintId());
         BacklogItem bli = backlog.getBacklogItemById(command.getBacklogItemid());
-//        backlog.removeBacklogItemById(command.getBacklogItemid());
-//        sprint.addBacklogItem(bli);
-//        aggregateRepository.save(0L, backlog);
-//        aggregateRepository.save(command.getSprintId(), sprint);
+        backlog.removeBacklogItemById(command.getBacklogItemid());
+        sprint.addBacklogItem(bli);
+        aggregateRepository.save(0L, backlog);
+        aggregateRepository.save(command.getSprintId(), sprint);
     }
 }
