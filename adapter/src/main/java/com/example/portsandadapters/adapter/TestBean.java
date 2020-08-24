@@ -45,16 +45,19 @@ public class TestBean {
         BacklogItem bli1 = BacklogItem.builder()
                                       .name("bli 1")
                                       .remainingStorypoints(1.1)
+                                      .id(1L)
                                       .build();
 
         BacklogItem bli2 = BacklogItem.builder()
                                       .name("bli 1")
                                       .remainingStorypoints(2.2)
+                                      .id(2L)
                                       .build();
 
         BacklogItem bli3 = BacklogItem.builder()
                                       .name("bli 1")
                                       .remainingStorypoints(3.3)
+                                      .id(3L)
                                       .build();
 
         backlog.addBacklogItem(bli1);
