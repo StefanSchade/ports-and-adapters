@@ -36,6 +36,7 @@ class TestBeanTest {
         }
 
         if (testBean!=null) {
+            log.info("Testbean found");
             testBean.test();
         }
     }

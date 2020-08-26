@@ -1,6 +1,7 @@
 package com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem;
 
-import com.example.portsandadapters.application.port.in.command.HandlerAbstraction;
+import com.example.portsandadapters.application.port.in.command.CommandHandler;
+import com.example.portsandadapters.application.port.in.command.CommandOutput;
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.domain.model.aggregate.sprint.BacklogItem;
 import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
@@ -10,22 +11,21 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
-public class HandlerSprintCommitBacklogItem implements HandlerAbstraction<CommandSprintCommitBacklogItem> {
+public class CommandHandlerSprintCommitBacklogItem extends CommandHandler<SprintCommitBacklogItemInput, CommandOutput> {
 
-    @NonNull private final PersistenceAbstraction<Sprint, Long> aggregateRepository;
+    @NonNull private PersistenceAbstraction<Sprint, Long> aggregateRepository;
 
     @Override
-    public void handle(CommandSprintCommitBacklogItem command) {
-
+    public void process(SprintCommitBacklogItemInput input) {
         log.info("in command handler");
         log.debug("debug");
 
         Sprint backlog = aggregateRepository.findByID(0L);
-        Sprint sprint = aggregateRepository.findByID(command.getSprintId());
-        BacklogItem bli = backlog.getBacklogItemById(command.getBacklogItemid());
-        backlog.removeBacklogItemById(command.getBacklogItemid());
+        Sprint sprint = aggregateRepository.findByID(input.getSprintId());
+        BacklogItem bli = backlog.getBacklogItemById(input.getBacklogItemid());
+        backlog.removeBacklogItemById(input.getBacklogItemid());
         sprint.addBacklogItem(bli);
         aggregateRepository.save(0L, backlog);
-        aggregateRepository.save(command.getSprintId(), sprint);
+        aggregateRepository.save(input.getSprintId(), sprint);
     }
 }
