@@ -6,22 +6,22 @@ import com.example.portsandadapters.adapter.out.persistence.jpa.model.SprintJpa;
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.domain.model.aggregate.sprint.BacklogItem;
 import com.example.portsandadapters.domain.model.base.AggregateRoot;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class JPAServiceSprintAggregate<V extends AggregateRoot, K> implements PersistenceAbstraction<V, K> {
 
-    @NonNull private final CrudRepository<BacklogItemJpa, Long> bliRepo;
+    @Autowired BacklogItemJPAMapper backlogItemJPAMapper;
 
-    @NonNull private final CrudRepository<SprintJpa, Long> sprintRepo;
+    @Autowired CrudRepository<BacklogItemJpa, Long> bliRepo;
 
-    private final BacklogItemJPAMapper backlogItemJPAMapper;
+    @Autowired CrudRepository<SprintJpa, Long> sprintRepo;
 
     public Set<V> findAll() {
         return null;

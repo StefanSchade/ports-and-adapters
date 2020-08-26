@@ -12,13 +12,7 @@ import org.springframework.data.repository.CrudRepository;
 @NoArgsConstructor
 public class JpaAdpaterFactory {
 
-    @Autowired BacklogItemJPAMapper backlogItemJPAMapper;
-
-    @Autowired CrudRepository<BacklogItemJpa, Long> bliRepo;
-
-    @Autowired CrudRepository<SprintJpa, Long> sprintRepo;
-
     public JPAServiceSprintAggregate createSprintAggregateJPAService() {
-        return new JPAServiceSprintAggregate<Sprint, Long>(bliRepo, sprintRepo, backlogItemJPAMapper);
+        return new JPAServiceSprintAggregate<Sprint, Long>();
     }
 }
