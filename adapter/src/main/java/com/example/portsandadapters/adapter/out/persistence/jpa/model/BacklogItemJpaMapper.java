@@ -5,9 +5,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
-public interface BacklogItemJPAMapper {
+public interface BacklogItemJpaMapper {
 
-    BacklogItemJPAMapper INSTANCE = Mappers.getMapper(BacklogItemJPAMapper.class);
+    BacklogItemJpaMapper INSTANCE = Mappers.getMapper(BacklogItemJpaMapper.class);
 
     BacklogItemJpa backlogItemDomainToJpa(BacklogItem source);
 

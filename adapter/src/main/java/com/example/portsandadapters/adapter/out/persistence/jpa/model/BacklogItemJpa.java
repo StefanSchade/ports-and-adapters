@@ -8,8 +8,11 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Slf4j
 @Data
@@ -26,6 +29,11 @@ public class BacklogItemJpa {
     @NonNull
     private String name;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "sprint", nullable = false)
+    @NonNull
+ //   @JsonBackReference necessary for REST
+    private SprintJpa sprint;
 
 
 }
