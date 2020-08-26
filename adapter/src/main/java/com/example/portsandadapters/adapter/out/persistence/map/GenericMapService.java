@@ -2,13 +2,16 @@ package com.example.portsandadapters.adapter.out.persistence.map;
 
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.domain.model.base.AggregateRoot;
+import com.example.portsandadapters.domain.model.base.IdentifiedObject;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class GenericMapService<V extends AggregateRoot, K> implements PersistenceAbstraction<V, K> {
+public class GenericMapService<V extends IdentifiedObject & AggregateRoot, K> implements PersistenceAbstraction<V, K> {
+
+    private static Long idcounter = 0L;
 
     protected Map<Long, V> map = new HashMap<>();
 
@@ -21,13 +24,15 @@ public class GenericMapService<V extends AggregateRoot, K> implements Persistenc
     }
 
     public V save(V value) {
-        save(value.getId(), value);
+        if (value.getId()==null) {
+            assignNewId(value);
+        }
+        map.put(value.getId(), value);
         return value;
     }
 
-    public V save(Long id, V value) {
-        map.put(id, value);
-        return value;
+    private void assignNewId(V value) {
+        value.setId(idcounter++);
     }
 
     public void delete(V value) {

@@ -25,7 +25,7 @@ public class CommandHandlerSprintCommitBacklogItem extends CommandHandler<Sprint
         BacklogItem bli = backlog.getBacklogItemById(input.getBacklogItemid());
         backlog.removeBacklogItemById(input.getBacklogItemid());
         sprint.addBacklogItem(bli);
-        aggregateRepository.save(0L, backlog);
-        aggregateRepository.save(input.getSprintId(), sprint);
+        aggregateRepository.save(backlog);
+        aggregateRepository.save(sprint);
     }
 }

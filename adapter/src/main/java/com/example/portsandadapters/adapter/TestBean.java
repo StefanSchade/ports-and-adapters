@@ -23,50 +23,43 @@ public class TestBean {
 
         Sprint backlog = Sprint.builder()
                                .name("Backlog")
-                               .id(0L)
                                .build();
 
         Sprint sprint1 = Sprint.builder()
                                .name("Testsprint 01")
-                               .id(1L)
                                .build();
 
         Sprint sprint2 = Sprint.builder()
                                .name("Testsprint 02")
-                               .id(2L)
                                .build();
 
         Sprint sprint3 = Sprint.builder()
                                .name("Testsprint 03")
-                               .id(3L)
                                .build();
 
         BacklogItem bli1 = BacklogItem.builder()
                                       .name("bli 1")
                                       .remainingStorypoints(1.1)
-                                      .id(1L)
                                       .build();
 
         BacklogItem bli2 = BacklogItem.builder()
                                       .name("bli 1")
                                       .remainingStorypoints(2.2)
-                                      .id(2L)
                                       .build();
 
         BacklogItem bli3 = BacklogItem.builder()
                                       .name("bli 1")
                                       .remainingStorypoints(3.3)
-                                      .id(3L)
                                       .build();
 
         backlog.addBacklogItem(bli1);
         backlog.addBacklogItem(bli2);
         backlog.addBacklogItem(bli3);
 
-        sprintPersistenceAbstraction.save(0L, backlog);
-        sprintPersistenceAbstraction.save(1L, sprint1);
-        sprintPersistenceAbstraction.save(2L, sprint2);
-        sprintPersistenceAbstraction.save(3L, sprint3);
+        sprintPersistenceAbstraction.save(backlog);
+        sprintPersistenceAbstraction.save(sprint1);
+        sprintPersistenceAbstraction.save(sprint2);
+        sprintPersistenceAbstraction.save(sprint3);
 
         CommandHandler commandHandler =
                 new RuntimeExceptionDecorator(new CommandHandlerSprintCommitBacklogItem(sprintPersistenceAbstraction));

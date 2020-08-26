@@ -33,15 +33,16 @@ public class JPAServiceSprintAggregate implements PersistenceAbstraction<Sprint,
     }
 
     public Sprint findByID(Long key) {
-        return null;
+        return sprintJpaMapper.sprintJpaToDomain(sprintRepo.findById(key).get());
     }
 
     public Sprint save(Sprint value) {
-        return null;
+        SprintJpa savedvalue = sprintRepo.save(sprintJpaMapper.sprintDomainToJpa(value));
+        return sprintJpaMapper.sprintJpaToDomain(savedvalue);
     }
 
     public Sprint save(Long id, Sprint value) {
-        return null;
+       return null;
     }
 
     public void delete(Sprint value) {

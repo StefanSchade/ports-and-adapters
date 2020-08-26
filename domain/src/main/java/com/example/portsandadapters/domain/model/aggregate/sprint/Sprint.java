@@ -2,6 +2,7 @@ package com.example.portsandadapters.domain.model.aggregate.sprint;
 
 import com.example.portsandadapters.domain.model.base.AggregateRoot;
 import com.example.portsandadapters.domain.model.base.Entity;
+import com.example.portsandadapters.domain.model.base.IdentifiedObject;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,18 +12,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SuperBuilder
 @Setter(AccessLevel.PRIVATE)
 @Getter
-@SuperBuilder
-public class Sprint extends AggregateRoot implements Entity {
+public class Sprint extends IdentifiedObject implements AggregateRoot, Entity {
 
     private final List<BacklogItem> backlogItems = new LinkedList<>();
 
-    private Long id;
+    private String name;
 
     private double sprintCapacityInStoryPoints;
-
-    private String name;
 
     public void addBacklogItem(BacklogItem backlogItem) {
         this.getBacklogItems()
@@ -31,7 +30,8 @@ public class Sprint extends AggregateRoot implements Entity {
 
     public void removeBacklogItemById(Long id) {
         BacklogItem bli = this.getBacklogItemById(id);
-        this.getBacklogItems().remove(bli);
+        this.getBacklogItems()
+            .remove(bli);
     }
 
     public double getRemainingStoryPointsCommited() {
@@ -60,6 +60,5 @@ public class Sprint extends AggregateRoot implements Entity {
         }
         return blilist.get(0);
     }
-
 
 }

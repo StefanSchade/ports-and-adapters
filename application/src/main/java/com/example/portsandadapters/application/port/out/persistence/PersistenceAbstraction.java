@@ -10,9 +10,9 @@ public interface PersistenceAbstraction<V extends AggregateRoot, K> {
 
     V findByID(K key);
 
-    V save(Long id, V value);
-
     void delete(V value);
+
+    V save(V value);
 
     void deleteByID(K key);
 
