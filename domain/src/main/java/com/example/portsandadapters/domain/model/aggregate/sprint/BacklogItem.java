@@ -4,12 +4,12 @@ import com.example.portsandadapters.domain.model.base.Entity;
 import com.example.portsandadapters.domain.model.base.IdentifiedObject;
 import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-@Setter(AccessLevel.PUBLIC)
+@Setter(AccessLevel.PRIVATE)
 @Getter
-@NoArgsConstructor
+@SuperBuilder
 public class BacklogItem extends IdentifiedObject implements Entity {
 
     private String name;
