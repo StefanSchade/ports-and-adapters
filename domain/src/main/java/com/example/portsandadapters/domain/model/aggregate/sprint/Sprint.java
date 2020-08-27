@@ -5,16 +5,16 @@ import com.example.portsandadapters.domain.model.base.Entity;
 import com.example.portsandadapters.domain.model.base.IdentifiedObject;
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@SuperBuilder
-@Setter(AccessLevel.PRIVATE)
+@Setter(AccessLevel.PUBLIC)
 @Getter
+@NoArgsConstructor
 public class Sprint extends IdentifiedObject implements AggregateRoot, Entity {
 
     private final List<BacklogItem> backlogItems = new LinkedList<>();

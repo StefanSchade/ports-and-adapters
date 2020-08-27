@@ -26,10 +26,9 @@ public class JPAServiceSprintAggregate implements PersistenceAbstraction<Sprint,
     @Autowired CrudRepository<SprintJpa, Long> sprintRepo;
 
     public Set<Sprint> findAll() {
-        StreamSupport.stream(sprintRepo.findAll().spliterator(), false)
+        return StreamSupport.stream(sprintRepo.findAll().spliterator(), false)
                      .map(sprintJpaMapper::sprintJpaToDomain)
                      .collect(Collectors.toSet());
-        return null;
     }
 
     public Sprint findByID(Long key) {

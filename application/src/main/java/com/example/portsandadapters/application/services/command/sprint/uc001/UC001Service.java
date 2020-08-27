@@ -7,6 +7,8 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Set;
+
 @Slf4j
 @RequiredArgsConstructor
 public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
@@ -19,16 +21,23 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
 
         UC001Output output = new UC001Output();
 
-        Sprint sprint = Sprint.builder()
-                              .name(input.getName())
-                              .build();
+        Sprint sprint = new Sprint();
+        sprint.setName(input.getName());
 
         aggregateRepository.save(sprint);
 
-        // todo  offenkundig hat JPA noch probleme
-        // Sprint response = aggregateRepository.findAll().iterator().next();
+        Set<Sprint> resultset = aggregateRepository.findAll();
 
-        Sprint response = sprint;
+        Sprint response;
+
+        if (resultset.isEmpty()) {
+            response = new Sprint();
+            response.setName("Object could not be retrieved");
+
+        } else {
+            response = resultset.iterator()
+                                .next();
+        }
 
         output.setResponseObject(response);
 
