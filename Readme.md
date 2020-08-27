@@ -17,3 +17,21 @@ This repo wants to experiment with the design based on a Java Spring implementat
 * Spring Boot
 * Maven
 * IDE agnostic (I use IntelliJ Ultimate)
+
+## Testing the app
+
+run the spring boot application (e.g. with maven spring plugin) and post the following JSON to http://localhost:8080/endpoint1
+
+{
+  "name": "Max"
+}
+
+The response will be an entity object of type Spring, that has done the roundtrip to the database as you can observe in the h2 console. the action is happening in the service class "UC001Service" without delegating to domain functionality. This is still enough since accessing a domain POJO is no problem and the domain design was not the center of this little demonstration.
+
+## Remaining tasks
+
+* Implement a Messaging Port and adapter(s) to handle domain events - an important concept in DDD
+* Add unit tests, at the time there are none
+* get more realistic in the domain model
+* do something useful with the decorators in the Command abstraction
+* implement a query in such a way, that a state change is impossible for the query (strategy is to separate the PersistenceAbstraction interface into read and write parts)
