@@ -1,4 +1,4 @@
-package com.example.portsandadapters.adapter.out.persistence.map;
+package com.example.portsandadapters.configuration;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

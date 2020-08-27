@@ -1,7 +1,7 @@
-package com.example.portsandadapters.adapter;
+package com.example.portsandadapters.configuration;
 
-import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.CommandHandlerSprintCommitBacklogItem;
-import com.example.portsandadapters.application.domainstories.command.sprint.commitbacklogitem.SprintCommitBacklogItemInput;
+import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
+import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Input;
 import com.example.portsandadapters.application.port.in.command.CommandHandler;
 import com.example.portsandadapters.application.port.in.command.CommandInput;
 import com.example.portsandadapters.application.port.in.command.impl.RuntimeExceptionDecorator;
@@ -62,11 +62,10 @@ public class TestBean {
         sprintPersistenceAbstraction.save(sprint3);
 
         CommandHandler commandHandler =
-                new RuntimeExceptionDecorator(new CommandHandlerSprintCommitBacklogItem(sprintPersistenceAbstraction));
-        CommandInput command = SprintCommitBacklogItemInput.builder()
-                                                           .backlogItemid(1L)
-                                                           .sprintId(1L)
-                                                           .build();
+                new RuntimeExceptionDecorator(new UC001Service(sprintPersistenceAbstraction));
+        CommandInput command = UC001Input.builder()
+                                         .name("abc")
+                                         .build();
 
         log.info("start processing");
 

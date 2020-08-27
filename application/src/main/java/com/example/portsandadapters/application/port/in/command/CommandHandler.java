@@ -4,6 +4,6 @@ public abstract class CommandHandler<I extends CommandInput, O extends CommandOu
 
     protected O output;
 
-    public abstract void process(I input);
+    public abstract O process(I input);
 
 }
