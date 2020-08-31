@@ -21,8 +21,9 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
 
         UC001Output output = new UC001Output();
 
-        Sprint sprint = new Sprint();
-        sprint.setName(input.getName());
+        Sprint sprint = Sprint.builder()
+                              .name(input.getName())
+                              .build();
 
         aggregateRepository.save(sprint);
 
@@ -31,8 +32,9 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
         Sprint response;
 
         if (resultset.isEmpty()) {
-            response = new Sprint();
-            response.setName("Object could not be retrieved");
+            response = Sprint.builder()
+                             .name("empty")
+                             .build();
 
         } else {
             response = resultset.iterator()
