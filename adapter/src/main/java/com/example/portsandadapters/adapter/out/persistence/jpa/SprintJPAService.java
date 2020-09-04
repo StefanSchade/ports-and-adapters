@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @NoArgsConstructor
-public class JPAServiceSprintAggregate implements PersistenceAbstraction<Sprint, Long> {
+public class SprintJPAService implements PersistenceAbstraction<Sprint, Long> {
 
     @Autowired BacklogItemJpaMapper backlogItemJPAMapper;
 
@@ -32,7 +32,7 @@ public class JPAServiceSprintAggregate implements PersistenceAbstraction<Sprint,
     }
 
     public Sprint findByID(Long key) {
-        return sprintJpaMapper.sprintJpaToDomain(sprintRepo.findById(key).get());
+        return sprintJpaMapper.sprintJpaToDomain(sprintRepo.findById(key).orElse(null));
     }
 
     public Sprint save(Sprint value) {

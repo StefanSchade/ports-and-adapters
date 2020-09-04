@@ -23,6 +23,7 @@ public class UC001Controller {
     private final PersistenceAbstraction<Sprint, Long> pa;
 
     @PostMapping("/endpoint1")
+
     public ResponseEntity<Sprint> endpoint1(@RequestBody UC001Input input) {
 
         log.info("input received " + input.getName());
