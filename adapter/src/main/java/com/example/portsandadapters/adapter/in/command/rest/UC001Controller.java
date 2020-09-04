@@ -3,7 +3,7 @@ package com.example.portsandadapters.adapter.in.command.rest;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Input;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Output;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.aggregate.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.aggregates.one.GenericAggregateRoot001;
 import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +26,7 @@ public class UC001Controller {
 
     public ResponseEntity<GenericAggregateRoot001> endpoint1(@RequestBody UC001Input input) {
 
-        log.info("input received " + input.getName());
+        log.info("input received " + input);
 
         UC001Output output = handler.process(input);
 
@@ -45,9 +45,9 @@ public class UC001Controller {
 //
 //        } else {
 
-            return ResponseEntity.ok()
-                                 .headers(responseHeaders)
-                                 .body(genericAggregateRoot001);
+        return ResponseEntity.ok()
+                             .headers(responseHeaders)
+                             .body(genericAggregateRoot001);
 //        }
     }
 

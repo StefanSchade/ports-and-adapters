@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.aggregate.two;
+package com.example.portsandadapters.domain.aggregates.two;
 
 import com.example.portsandadapters.domain.AggregateRoot;
 import com.example.portsandadapters.domain.Entity;
@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Setter(AccessLevel.PRIVATE)
 @Getter
 @SuperBuilder
-class GenericAggregateRoot002 extends IdentifiedObject implements AggregateRoot, Entity {
+public class GenericAggregateRoot002 extends IdentifiedObject implements AggregateRoot, Entity {
 
     private final String name;
 

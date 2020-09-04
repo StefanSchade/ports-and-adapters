@@ -1,7 +1,7 @@
 package com.example.portsandadapters.adapter.in.command.rest;
 
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.aggregate.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.aggregates.one.GenericAggregateRoot001;
 import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

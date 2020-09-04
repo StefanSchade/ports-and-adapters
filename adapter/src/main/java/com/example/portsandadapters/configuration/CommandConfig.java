@@ -1,7 +1,7 @@
 package com.example.portsandadapters.configuration;
 
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.aggregate.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.aggregates.one.GenericAggregateRoot001;
 import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -18,9 +18,7 @@ public class CommandConfig {
 
     @Bean
     public UC001Service Ag001_Com001_LongName_Service() {
-        return new UC001Service(ag001Repo);
+        return null;//new UC001Service(ag001Repo);
     }
-
-
 
 }

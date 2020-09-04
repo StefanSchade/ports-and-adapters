@@ -16,6 +16,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UC001Input implements CommandInput {
 
-    @NonNull private String name;
+    @NonNull private int number;
 
 }

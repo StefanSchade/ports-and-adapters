@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.aggregate.one;
+package com.example.portsandadapters.domain.aggregates.one;
 
 import com.example.portsandadapters.domain.ValueObject;
 

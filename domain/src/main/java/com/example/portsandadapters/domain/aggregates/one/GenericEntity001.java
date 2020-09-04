@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.aggregate.two;
+package com.example.portsandadapters.domain.aggregates.one;
 
 import com.example.portsandadapters.domain.Entity;
 import lombok.AccessLevel;
@@ -9,12 +9,10 @@ import lombok.experimental.SuperBuilder;
 @Setter(AccessLevel.PRIVATE)
 @Getter
 @SuperBuilder
-public class GenericEntity002 implements Entity {
-
-    private final Long referenceToAggregateOne;
-
-    private final int linkedListOrder;
+public class GenericEntity001 implements Entity {
 
     private final String name;
+
+    private final GenericValue001 referenceValueObject;
 
 }
