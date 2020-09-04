@@ -26,13 +26,15 @@ public class SprintJPAService implements PersistenceAbstraction<Sprint, Long> {
     @Autowired CrudRepository<SprintJpa, Long> sprintRepo;
 
     public Set<Sprint> findAll() {
-        return StreamSupport.stream(sprintRepo.findAll().spliterator(), false)
-                     .map(sprintJpaMapper::sprintJpaToDomain)
-                     .collect(Collectors.toSet());
+        return StreamSupport.stream(sprintRepo.findAll()
+                                              .spliterator(), false)
+                            .map(sprintJpaMapper::sprintJpaToDomain)
+                            .collect(Collectors.toSet());
     }
 
     public Sprint findByID(Long key) {
-        return sprintJpaMapper.sprintJpaToDomain(sprintRepo.findById(key).orElse(null));
+        return sprintJpaMapper.sprintJpaToDomain(sprintRepo.findById(key)
+                                                           .orElse(null));
     }
 
     public Sprint save(Sprint value) {
@@ -41,7 +43,7 @@ public class SprintJPAService implements PersistenceAbstraction<Sprint, Long> {
     }
 
     public Sprint save(Long id, Sprint value) {
-       return null;
+        return null;
     }
 
     public void delete(Sprint value) {
