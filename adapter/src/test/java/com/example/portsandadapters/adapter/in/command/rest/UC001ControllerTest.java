@@ -2,7 +2,7 @@ package com.example.portsandadapters.adapter.in.command.rest;
 
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -18,7 +18,7 @@ class UC001ControllerTest {
 
     @Mock private UC001Service handler;
 
-    @Mock private PersistenceAbstraction<Sprint, Long> pa;
+    @Mock private PersistenceAbstraction<GenericAggregateRoot001, Long> pa;
 
     private MockMvc mockMvc;
 

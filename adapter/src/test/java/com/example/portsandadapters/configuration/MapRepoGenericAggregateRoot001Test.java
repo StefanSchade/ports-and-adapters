@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-class MapRepoSprintTest {
+class MapRepoGenericAggregateRoot001Test {
 
     @BeforeEach
     void setUp() {

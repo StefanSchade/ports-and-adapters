@@ -1,6 +1,6 @@
 package com.example.portsandadapters.application.port.in.command;
 
-import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +12,6 @@ public abstract class CommandOutput {
 
     public Throwable error = null;
 
-    Sprint responseObject;
+    GenericAggregateRoot001 responseObject;
 
 }

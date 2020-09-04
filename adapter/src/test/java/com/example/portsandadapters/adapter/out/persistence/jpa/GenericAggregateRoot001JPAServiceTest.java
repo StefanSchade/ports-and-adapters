@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 
-class SprintJPAServiceTest {
+class GenericAggregateRoot001JPAServiceTest {
 
     @Mock CrudRepository<SprintJpa, Long> sprintRepo;
 

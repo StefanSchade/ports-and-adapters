@@ -2,7 +2,7 @@ package com.example.portsandadapters.configuration;
 
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -14,7 +14,7 @@ import org.springframework.context.annotation.PropertySource;
 @RequiredArgsConstructor
 public class CommandConfig {
 
-    @NonNull private PersistenceAbstraction<Sprint, Long> ag001Repo;
+    @NonNull private PersistenceAbstraction<GenericAggregateRoot001, Long> ag001Repo;
 
     @Bean
     public UC001Service Ag001_Com001_LongName_Service() {

@@ -4,7 +4,7 @@ import com.example.portsandadapters.application.port.out.persistence.Persistence
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Input;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Output;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -20,17 +20,17 @@ public class UC001Controller {
 
     private final UC001Service handler;
 
-    private final PersistenceAbstraction<Sprint, Long> pa;
+    private final PersistenceAbstraction<GenericAggregateRoot001, Long> pa;
 
     @PostMapping("/endpoint1")
 
-    public ResponseEntity<Sprint> endpoint1(@RequestBody UC001Input input) {
+    public ResponseEntity<GenericAggregateRoot001> endpoint1(@RequestBody UC001Input input) {
 
         log.info("input received " + input.getName());
 
         UC001Output output = handler.process(input);
 
-        Sprint sprint = output.getResponseObject();
+        GenericAggregateRoot001 genericAggregateRoot001 = output.getResponseObject();
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("examplekey", "examplevalue");
@@ -45,7 +45,7 @@ public class UC001Controller {
 
             return ResponseEntity.ok()
                                  .headers(responseHeaders)
-                                 .body(sprint);
+                                 .body(genericAggregateRoot001);
         }
     }
 

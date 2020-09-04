@@ -1,6 +1,6 @@
 package com.example.portsandadapters.adapter.out.persistence.jpa.model;
 
-import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -9,8 +9,8 @@ public interface SprintJpaMapper {
 
     SprintJpaMapper INSTANCE = Mappers.getMapper(SprintJpaMapper.class);
 
-    SprintJpa sprintDomainToJpa(Sprint source);
+    SprintJpa sprintDomainToJpa(GenericAggregateRoot001 source);
 
-    Sprint sprintJpaToDomain(SprintJpa source);
+    GenericAggregateRoot001 sprintJpaToDomain(SprintJpa source);
 
 }

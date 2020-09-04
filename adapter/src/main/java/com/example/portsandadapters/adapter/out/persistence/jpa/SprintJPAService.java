@@ -5,7 +5,7 @@ import com.example.portsandadapters.adapter.out.persistence.jpa.model.BacklogIte
 import com.example.portsandadapters.adapter.out.persistence.jpa.model.SprintJpa;
 import com.example.portsandadapters.adapter.out.persistence.jpa.model.SprintJpaMapper;
 import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
-import com.example.portsandadapters.domain.model.aggregate.sprint.Sprint;
+import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @NoArgsConstructor
-public class SprintJPAService implements PersistenceAbstraction<Sprint, Long> {
+public class SprintJPAService implements PersistenceAbstraction<GenericAggregateRoot001, Long> {
 
     @Autowired BacklogItemJpaMapper backlogItemJPAMapper;
 
@@ -25,28 +25,28 @@ public class SprintJPAService implements PersistenceAbstraction<Sprint, Long> {
 
     @Autowired CrudRepository<SprintJpa, Long> sprintRepo;
 
-    public Set<Sprint> findAll() {
+    public Set<GenericAggregateRoot001> findAll() {
         return StreamSupport.stream(sprintRepo.findAll()
                                               .spliterator(), false)
                             .map(sprintJpaMapper::sprintJpaToDomain)
                             .collect(Collectors.toSet());
     }
 
-    public Sprint findByID(Long key) {
+    public GenericAggregateRoot001 findByID(Long key) {
         return sprintJpaMapper.sprintJpaToDomain(sprintRepo.findById(key)
                                                            .orElse(null));
     }
 
-    public Sprint save(Sprint value) {
+    public GenericAggregateRoot001 save(GenericAggregateRoot001 value) {
         SprintJpa savedvalue = sprintRepo.save(sprintJpaMapper.sprintDomainToJpa(value));
         return sprintJpaMapper.sprintJpaToDomain(savedvalue);
     }
 
-    public Sprint save(Long id, Sprint value) {
+    public GenericAggregateRoot001 save(Long id, GenericAggregateRoot001 value) {
         return null;
     }
 
-    public void delete(Sprint value) {
+    public void delete(GenericAggregateRoot001 value) {
     }
 
     public void deleteByID(Long key) {

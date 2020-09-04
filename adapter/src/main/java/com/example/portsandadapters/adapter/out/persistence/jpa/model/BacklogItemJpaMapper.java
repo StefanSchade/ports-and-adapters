@@ -1,6 +1,6 @@
 package com.example.portsandadapters.adapter.out.persistence.jpa.model;
 
-import com.example.portsandadapters.domain.model.aggregate.sprint.BacklogItem;
+import com.example.portsandadapters.domain.model.aggregate.one.GenericEntity001;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -9,8 +9,8 @@ public interface BacklogItemJpaMapper {
 
     BacklogItemJpaMapper INSTANCE = Mappers.getMapper(BacklogItemJpaMapper.class);
 
-    BacklogItemJpa backlogItemDomainToJpa(BacklogItem source);
+    BacklogItemJpa backlogItemDomainToJpa(GenericEntity001 source);
 
-    BacklogItem backlogItemJpaToDomain(BacklogItemJpa source);
+    GenericEntity001 backlogItemJpaToDomain(BacklogItemJpa source);
 
 }
