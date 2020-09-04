@@ -1,8 +1,8 @@
 package com.example.portsandadapters.adapter.out.persistence.map;
 
-import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
-import com.example.portsandadapters.domain.model.base.AggregateRoot;
-import com.example.portsandadapters.domain.model.base.IdentifiedObject;
+import com.example.portsandadapters.domain.AggregateRoot;
+import com.example.portsandadapters.ports.outbound.persistence.IdentifiedObject;
+import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package com.example.portsandadapters.application.port.in.command;
+package com.example.portsandadapters.ports.inbound.command;
 
 public abstract class CommandHandler<I extends CommandInput, O extends CommandOutput> {
 

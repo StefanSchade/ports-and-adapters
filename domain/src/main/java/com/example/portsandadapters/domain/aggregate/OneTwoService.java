@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.model.aggregate;
+package com.example.portsandadapters.domain.aggregate;
 
 public class OneTwoService {
 

@@ -1,8 +1,8 @@
 package com.example.portsandadapters.configuration;
 
 import com.example.portsandadapters.adapter.out.persistence.map.GenericMapService;
-import com.example.portsandadapters.domain.model.base.AggregateRoot;
-import com.example.portsandadapters.domain.model.base.IdentifiedObject;
+import com.example.portsandadapters.domain.AggregateRoot;
+import com.example.portsandadapters.ports.outbound.persistence.IdentifiedObject;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

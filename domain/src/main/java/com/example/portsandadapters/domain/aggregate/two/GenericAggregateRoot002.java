@@ -1,8 +1,8 @@
-package com.example.portsandadapters.domain.model.aggregate.two;
+package com.example.portsandadapters.domain.aggregate.two;
 
-import com.example.portsandadapters.domain.model.base.AggregateRoot;
-import com.example.portsandadapters.domain.model.base.Entity;
-import com.example.portsandadapters.domain.model.base.IdentifiedObject;
+import com.example.portsandadapters.domain.AggregateRoot;
+import com.example.portsandadapters.domain.Entity;
+import com.example.portsandadapters.ports.outbound.persistence.IdentifiedObject;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

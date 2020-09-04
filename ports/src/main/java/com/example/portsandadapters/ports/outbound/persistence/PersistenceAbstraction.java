@@ -1,6 +1,6 @@
-package com.example.portsandadapters.application.port.out.persistence;
+package com.example.portsandadapters.ports.outbound.persistence;
 
-import com.example.portsandadapters.domain.model.base.AggregateRoot;
+import com.example.portsandadapters.domain.AggregateRoot;
 
 import java.util.Set;
 

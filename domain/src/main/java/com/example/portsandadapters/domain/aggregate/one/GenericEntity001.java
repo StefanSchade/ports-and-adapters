@@ -1,6 +1,6 @@
-package com.example.portsandadapters.domain.model.aggregate.one;
+package com.example.portsandadapters.domain.aggregate.one;
 
-import com.example.portsandadapters.domain.model.base.Entity;
+import com.example.portsandadapters.domain.Entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,10 +1,10 @@
 package com.example.portsandadapters.adapter.in.command.rest;
 
-import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Input;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Output;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.aggregate.one.GenericAggregateRoot001;
+import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
@@ -30,23 +30,25 @@ public class UC001Controller {
 
         UC001Output output = handler.process(input);
 
-        GenericAggregateRoot001 genericAggregateRoot001 = output.getResponseObject();
+        GenericAggregateRoot001 genericAggregateRoot001 = null; //output.getResponseObject();
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("examplekey", "examplevalue");
 
-        if (output.getFailed()) {
+        //todo controller error handling with spring standard annotations and exceptions instead of output object
 
-            return ResponseEntity.status(500)
-                                 .headers(responseHeaders)
-                                 .build();
-
-        } else {
+//        if (output.getFailed()) {
+//
+//            return ResponseEntity.status(500)
+//                                 .headers(responseHeaders)
+//                                 .build();
+//
+//        } else {
 
             return ResponseEntity.ok()
                                  .headers(responseHeaders)
                                  .body(genericAggregateRoot001);
-        }
+//        }
     }
 
 }

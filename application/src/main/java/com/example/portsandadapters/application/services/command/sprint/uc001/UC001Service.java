@@ -1,8 +1,8 @@
 package com.example.portsandadapters.application.services.command.sprint.uc001;
 
-import com.example.portsandadapters.application.port.in.command.CommandHandler;
-import com.example.portsandadapters.application.port.out.persistence.PersistenceAbstraction;
-import com.example.portsandadapters.domain.model.aggregate.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.aggregate.one.GenericAggregateRoot001;
+import com.example.portsandadapters.ports.inbound.command.CommandHandler;
+import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

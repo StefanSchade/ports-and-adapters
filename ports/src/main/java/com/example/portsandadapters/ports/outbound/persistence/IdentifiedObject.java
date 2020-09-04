@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.model.base;
+package com.example.portsandadapters.ports.outbound.persistence;
 
 import lombok.AccessLevel;
 import lombok.Getter;
