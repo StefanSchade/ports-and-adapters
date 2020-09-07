@@ -19,7 +19,7 @@ public class GenericAggregateRoot002 extends IdentifiedObject implements Aggrega
 
     public void behaviour002(String name, int number) {
 
-        //todo when there is messaging setup sync of the name
+        /* todo when there is messaging setup sync of the name via a domain event */
 
         GenericEntity002 genericEntity002 = GenericEntity002.builder()
                                                             .name(name)
@@ -27,7 +27,6 @@ public class GenericAggregateRoot002 extends IdentifiedObject implements Aggrega
                                                             .build();
 
         this.dependentEntity = genericEntity002;
-
 
     }
 
