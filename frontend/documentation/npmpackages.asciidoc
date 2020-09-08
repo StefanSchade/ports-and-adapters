@@ -1,0 +1,140 @@
+
+|===
+|npm package | explanation |dev / prod | config file | details
+
+|react
+|js ui framework
+|prod
+|
+|
+
+|react-dom
+|js ui framework
+|prod
+|
+|
+
+|lodash
+|popular js library
+|prod
+|
+|
+
+|normalize.css
+|popular js library
+|prod
+|
+|
+
+|lazysizes
+|lazy loading of images
+|prod
+|
+|
+
+|axios
+|popular js library for async
+|prod
+|
+|
+
+|webpack
+|bundler
+|dev
+|`package.json`
+| scripts, module.exports - build mit webpack, in- and output location, server mode, watch (unless devserver is used)
+
+|webpack-cli
+|comandline interface for webpack
+|dev
+|
+|
+
+|webpack-devserver
+|devserver enables hot deployment
+|dev
+|`package.json`
+| devServer - watch for changes, content location, hot deployment, port and host for the dev server instance
+
+|html-webpack-plugin
+|
+|dev
+|used in build script
+|
+
+
+|clean-webpack-plugin
+|enables webpack to clean build artefacts
+|dev
+|`webpack.config.js`
+| see example - configure plugin
+
+|css-loader
+|enables webpack to package styles
+|dev
+|
+|
+
+| style-loader
+| enables webpack-devserver to load styles
+|
+|
+|
+
+|postcss-loader
+| basic package for post css
+|
+|
+|
+
+|postcss-simple-vars
+.6+|various extentions for postcss
+.6+|dev
+.6+|`webpack.config.js`
+.6+| see example
+
+|postcss-nested
+
+|autoprefixer
+
+|postcss-import
+
+|postcss-mixins
+
+|postcss-hexrgba
+
+
+|@babel/core
+|transpile to legacy js
+|
+|
+|https://babeljs.io/docs/en/usage[config docu]
+
+
+|@babel/preset-env
+|
+|
+|
+|
+
+|@babel/preset-react
+|transpile jsx
+|
+|
+|
+
+|cssnano
+| minifyier
+| dev
+|
+|
+
+|fs-extra
+| utilities for file operations used in build process
+|
+|
+|
+
+
+
+|===
