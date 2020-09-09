@@ -20,11 +20,9 @@ public class CommandConfig {
 
     @NonNull private PersistenceAbstraction<GenericAggregateRoot002, Long> ag002Repo;
 
-    @NonNull private OneTwoService oneTwoService;
-
     @Bean
     public UC001Service Ag001_Com001_LongName_Service() {
-        return new UC001Service(ag001Repo, ag002Repo, oneTwoService);
+        return new UC001Service(ag001Repo, ag002Repo);
     }
 
 
