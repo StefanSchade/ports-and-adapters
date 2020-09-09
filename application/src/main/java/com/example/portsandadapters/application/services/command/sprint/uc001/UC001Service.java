@@ -18,7 +18,7 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
 
     @NonNull PersistenceAbstraction<GenericAggregateRoot002, Long> repo002;
 
-    @NonNull private OneTwoService oneTwoService;
+    @NonNull private OneTwoService oneTwoService = new OneTwoService();
 
     @Override
     public UC001Output process(UC001Input input) {
@@ -28,8 +28,10 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
         Long aggOneRef = 0L;
         Long aggTwoRef = 0L;
 
-        GenericAggregateRoot001 agg01 = GenericAggregateRoot001.builder().build();
-        GenericAggregateRoot002 agg02 = GenericAggregateRoot002.builder().build();
+        GenericAggregateRoot001 agg01 = GenericAggregateRoot001.builder()
+                                                               .build();
+        GenericAggregateRoot002 agg02 = GenericAggregateRoot002.builder()
+                                                               .build();
 
         repo001.save(agg01);
         repo002.save(agg02);
@@ -46,7 +48,7 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
 
         log.info("processing usecase 1");
 
-        oneTwoService.doSomethingInvolvingBothAggregates(aggOneRef, aggTwoRef, 1);
+        oneTwoService.doSomethingInvolvingBothAggregates(repo001, repo002, aggOneRef, aggTwoRef, 1);
 
         UC001Output output = new UC001Output();
         return output;
