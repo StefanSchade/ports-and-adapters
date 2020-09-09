@@ -19,6 +19,7 @@
         <module>domain</module>
         <module>application</module>
         <module>ports</module>
+        <module>frontend</module>
     </modules>
 
     <properties>

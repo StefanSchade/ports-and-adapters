@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ports-and-adapters</artifactId>
+        <groupId>com.example</groupId>
+        <version>0.0.2-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>frontend</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>font-end install</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>font-end build package</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>run</argument>
+                                <argument>build</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <workingDirectory>${basedir}</workingDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <!-- <execution>
+                         <id>copy front-end template</id>
+                         <goals>
+                             <goal>copy-resources</goal>
+                         </goals>
+                         <phase>prepare-package</phase>
+                         <configuration>
+                             <outputDirectory>${basedir}/application/src/main/resources/templates</outputDirectory>
+                             <resources>
+                                 <resource>
+                                     <directory>frontend/dist</directory>
+                                     <includes>
+                                         <include>index.html</include>
+                                     </includes>
+                                 </resource>
+                             </resources>
+                         </configuration>
+                     </execution>
+                     <execution>
+                         <id>copy front-end static assets</id>
+                         <goals>
+                             <goal>copy-resources</goal>
+                         </goals>
+                         <phase>prepare-package</phase>
+                         <configuration>
+                             <outputDirectory>${basedir}/application/src/main/resources/static</outputDirectory>
+                             <resources>
+                                 <resource>
+                                     <directory>frontend/dist</directory>
+                                     <excludes>
+                                         <exclude>index.html</exclude>
+                                     </excludes>
+                                 </resource>
+                             </resources>
+                         </configuration>
+                     </execution>-->
+                    <execution>
+                        <id>copy front-end template to target</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <outputDirectory>${basedir}/../adapter/target/classes/templates</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>dist</directory>
+                                    <includes>
+                                        <include>index.html</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy front-end static assets to target</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <outputDirectory>${basedir}/../adapter/target/classes/static</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>dist</directory>
+                                    <excludes>
+                                        <exclude>index.html</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
