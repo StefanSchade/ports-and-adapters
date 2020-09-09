@@ -101,6 +101,81 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>front-end install</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>install</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>front-end build package</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <executable>npm</executable>
+                            <arguments>
+                                <argument>run</argument>
+                                <argument>build</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <workingDirectory>${basedir}/../frontend</workingDirectory>
+                </configuration>
+            </plugin>
+            <!--for single executable jar-->
+            <!-- <plugin>
+                 <artifactId>maven-resources-plugin</artifactId>
+                 <version>3.1.0</version>
+                 <executions>
+                     <execution>
+                          <id>copy front-end to resources</id>
+                          <goals>
+                              <goal>copy-resources</goal>
+                          </goals>
+                          <phase>prepare-package</phase>
+                          <configuration>
+                              <outputDirectory>${basedir}/src/main/resources/static</outputDirectory>
+                              <resources>
+                                  <resource>
+                                      <directory>${basedir}/../frontend/dist</directory>
+                                  </resource>
+                              </resources>
+                          </configuration>
+                      </execution>
+                     <execution>
+                         <id>copy front-end to target</id>
+                         <goals>
+                             <goal>copy-resources</goal>
+                         </goals>
+                         <phase>prepare-package</phase>
+                         <configuration>
+                             <outputDirectory>${basedir}/target/classes/static</outputDirectory>
+                             <resources>
+                                 <resource>
+                                     <directory>${basedir}/../frontend/dist</directory>
+                                 </resource>
+                             </resources>
+                         </configuration>
+                     </execution>
+                 </executions>
+             </plugin>-->
         </plugins>
     </build>
 
