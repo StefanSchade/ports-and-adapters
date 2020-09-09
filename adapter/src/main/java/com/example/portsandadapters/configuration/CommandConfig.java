@@ -2,6 +2,8 @@ package com.example.portsandadapters.configuration;
 
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
 import com.example.portsandadapters.domain.aggregates.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.aggregates.two.GenericAggregateRoot002;
+import com.example.portsandadapters.domain.services.OneTwoService;
 import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -16,9 +18,14 @@ public class CommandConfig {
 
     @NonNull private PersistenceAbstraction<GenericAggregateRoot001, Long> ag001Repo;
 
+    @NonNull private PersistenceAbstraction<GenericAggregateRoot002, Long> ag002Repo;
+
+    @NonNull private OneTwoService oneTwoService;
+
     @Bean
     public UC001Service Ag001_Com001_LongName_Service() {
-        return null;//new UC001Service(ag001Repo);
+        return new UC001Service(ag001Repo, ag002Repo, oneTwoService);
     }
+
 
 }
