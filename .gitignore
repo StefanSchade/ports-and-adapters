@@ -1,3 +1,7 @@
+./adapter/src/main/resources/static/*
+
+
+
 ### OS specific
 .DS_Store
 Thumbs.db

@@ -140,8 +140,7 @@
                     <workingDirectory>${basedir}/../frontend</workingDirectory>
                 </configuration>
             </plugin>
-            <!--for single executable jar and e2e tests-->
-            <!--<plugin>
+            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.1.0</version>
                 <executions>
@@ -187,7 +186,7 @@
                         </fileset>
                     </filesets>
                 </configuration>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
 
