@@ -1,11 +1,11 @@
 package com.example.portsandadapters.application.services.command.sprint.uc001;
 
-import com.example.portsandadapters.domain.aggregates.one.GenericAggregateRoot001;
-import com.example.portsandadapters.domain.aggregates.one.GenericValue001;
-import com.example.portsandadapters.domain.aggregates.two.GenericAggregateRoot002;
+import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.model.one.GenericValue001;
+import com.example.portsandadapters.domain.model.two.GenericAggregateRoot002;
 import com.example.portsandadapters.domain.services.OneTwoService;
 import com.example.portsandadapters.ports.inbound.command.CommandHandler;
-import com.example.portsandadapters.ports.outbound.persistence.PersistenceAbstraction;
+import com.example.portsandadapters.persistence.PersistenceAbstraction;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -50,7 +50,7 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
 
         oneTwoService.doSomethingInvolvingBothAggregates(repo001, repo002, aggOneRef, aggTwoRef, 1);
 
-        UC001Output output = new UC001Output();
+        output = new UC001Output();
         return output;
     }
 

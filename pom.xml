@@ -15,10 +15,16 @@
     </parent>
 
     <modules>
-        <module>adapter</module>
-        <module>domain</module>
+        <module>configuration</module>
+        <module>adapter-command-rest</module>
+        <module>adapter-persistence-jpa</module>
+        <module>adapter-persistence-map</module>
         <module>application</module>
-        <module>ports</module>
+        <module>domain-model</module>
+        <module>domain-services</module>
+        <module>ports-inbound-command</module>
+        <module>ports-outbound-persistence</module>
+        <module>ports-domain</module>
     </modules>
 
     <properties>
