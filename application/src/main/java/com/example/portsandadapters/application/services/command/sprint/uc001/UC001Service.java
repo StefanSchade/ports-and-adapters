@@ -4,7 +4,7 @@ import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
 import com.example.portsandadapters.domain.model.one.GenericValue001;
 import com.example.portsandadapters.domain.model.two.GenericAggregateRoot002;
 import com.example.portsandadapters.domain.services.OneTwoService;
-import com.example.portsandadapters.ports.inbound.command.CommandHandler;
+import com.example.portsandadapters.domain.markers.inbound.command.CommandHandler;
 import com.example.portsandadapters.persistence.PersistenceAbstraction;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

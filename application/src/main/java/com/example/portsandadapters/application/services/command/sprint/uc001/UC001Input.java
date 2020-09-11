@@ -1,6 +1,6 @@
 package com.example.portsandadapters.application.services.command.sprint.uc001;
 
-import com.example.portsandadapters.ports.inbound.command.CommandInput;
+import com.example.portsandadapters.domain.markers.inbound.command.CommandInput;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

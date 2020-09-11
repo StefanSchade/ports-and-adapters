@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
@@ -11,20 +12,20 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.3.RELEASE</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <modules>
-        <module>configuration</module>
+        <module>domain-marker</module>
+        <module>ports-outbound-persistence</module>
+        <module>ports-inbound-command</module>
+        <module>domain-model</module>
+        <module>domain-services</module>
+        <module>application</module>
         <module>adapter-command-rest</module>
         <module>adapter-persistence-jpa</module>
         <module>adapter-persistence-map</module>
-        <module>application</module>
-        <module>domain-model</module>
-        <module>domain-services</module>
-        <module>ports-inbound-command</module>
-        <module>ports-outbound-persistence</module>
-        <module>ports-domain</module>
+        <module>configuration</module>
     </modules>
 
     <properties>
@@ -39,11 +40,13 @@
     <scm>
         <developerConnection>scm:git:https://github.com/StefanSchade/ports-and-adapters.git</developerConnection>
         <url>https://github.com/StefanSchade/ports-and-adapters</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <dependencyManagement>
         <dependencies>
+
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-jpa</artifactId>

@@ -14,8 +14,8 @@
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>ports-domain</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <artifactId>domain-marker</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>

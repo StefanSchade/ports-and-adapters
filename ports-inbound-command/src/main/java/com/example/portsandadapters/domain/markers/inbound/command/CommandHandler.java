@@ -1,4 +1,4 @@
-package com.example.portsandadapters.ports.inbound.command;
+package com.example.portsandadapters.domain.markers.inbound.command;
 
 public abstract class CommandHandler<I extends CommandInput, O extends CommandOutput> {
 

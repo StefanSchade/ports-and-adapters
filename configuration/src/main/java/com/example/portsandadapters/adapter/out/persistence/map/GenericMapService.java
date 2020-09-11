@@ -1,6 +1,6 @@
 package com.example.portsandadapters.adapter.out.persistence.map;
 
-import com.example.portsandadapters.ports.AggregateRoot;
+import com.example.portsandadapters.domain.markers.AggregateRoot;
 import com.example.portsandadapters.persistence.IdentifiedObject;
 import com.example.portsandadapters.persistence.PersistenceAbstraction;
 
