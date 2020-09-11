@@ -8,35 +8,21 @@
         <version>0.0.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
 
     <artifactId>adapter-persistence-jpa</artifactId>
-
 
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>application</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>ports-outbound-persistence</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>domain-model</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
-        </dependency>
-        <!--
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>domain-services</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
-        </dependency>
-        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -45,13 +31,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-autoconfigure</artifactId>
-        <version>2.3.2.RELEASE</version>
-    </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.3.2.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -77,23 +61,8 @@
             </exclusions>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
-            <!--
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
-            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -118,94 +87,6 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
-            <!--
-                        <plugin>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>exec-maven-plugin</artifactId>
-                            <version>1.6.0</version>
-                            <executions>
-                                <execution>
-                                    <id>front-end install</id>
-                                    <goals>
-                                        <goal>exec</goal>
-                                    </goals>
-                                    <phase>prepare-package</phase>
-                                    <configuration>
-                                        <executable>npm</executable>
-                                        <arguments>
-                                            <argument>install</argument>
-                                        </arguments>
-                                    </configuration>
-                                </execution>
-                                <execution>
-                                    <id>front-end build package</id>
-                                    <goals>
-                                        <goal>exec</goal>
-                                    </goals>
-                                    <phase>prepare-package</phase>
-                                    <configuration>
-                                        <executable>npm</executable>
-                                        <arguments>
-                                            <argument>run</argument>
-                                            <argument>build</argument>
-                                        </arguments>
-                                    </configuration>
-                                </execution>
-                            </executions>
-                            <configuration>
-                                <workingDirectory>${basedir}/../frontend</workingDirectory>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <artifactId>maven-resources-plugin</artifactId>
-                            <version>3.1.0</version>
-                            <executions>
-                                <execution>
-                                    <id>copy front-end to resources</id>
-                                    <goals>
-                                        <goal>copy-resources</goal>
-                                    </goals>
-                                    <phase>prepare-package</phase>
-                                    <configuration>
-                                        <outputDirectory>${basedir}/src/main/resources/static</outputDirectory>
-                                        <resources>
-                                            <resource>
-                                                <directory>${basedir}/../frontend/dist</directory>
-                                            </resource>
-                                        </resources>
-                                    </configuration>
-                                </execution>
-                                <execution>
-                                    <id>copy front-end to target</id>
-                                    <goals>
-                                        <goal>copy-resources</goal>
-                                    </goals>
-                                    <phase>prepare-package</phase>
-                                    <configuration>
-                                        <outputDirectory>${basedir}/target/classes/static</outputDirectory>
-                                        <resources>
-                                            <resource>
-                                                <directory>${basedir}/../frontend/dist</directory>
-                                            </resource>
-                                        </resources>
-                                    </configuration>
-                                </execution>
-                            </executions>
-                        </plugin>
-                        <plugin>
-                            <artifactId>maven-clean-plugin</artifactId>
-                            <version>3.1.0</version>
-                            <configuration>
-                                <filesets>
-                                    <fileset>
-                                        <directory>${basedir}/src/main/resources/static</directory>
-                                    </fileset>
-                                </filesets>
-                            </configuration>
-                        </plugin>
-                        -->
         </plugins>
     </build>
-
-
 </project>
