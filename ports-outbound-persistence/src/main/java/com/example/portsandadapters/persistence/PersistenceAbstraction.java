@@ -1,6 +1,6 @@
 package com.example.portsandadapters.persistence;
 
-import com.example.portsandadapters.domain.markers.AggregateRoot;
+import com.example.portsandadapters.domain.contract.AggregateRoot;
 
 import java.util.Set;
 

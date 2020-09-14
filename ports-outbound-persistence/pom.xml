@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>domain-marker</artifactId>
+            <artifactId>domain-contract</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

@@ -4,7 +4,7 @@ import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
 import com.example.portsandadapters.domain.model.one.GenericValue001;
 import com.example.portsandadapters.domain.model.two.GenericAggregateRoot002;
 import com.example.portsandadapters.domain.services.OneTwoService;
-import com.example.portsandadapters.domain.markers.inbound.command.CommandHandler;
+import com.example.portsandadapters.domain.contract.inbound.command.CommandHandler;
 import com.example.portsandadapters.persistence.PersistenceAbstraction;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -48,7 +48,7 @@ public class UC001Service extends CommandHandler<UC001Input, UC001Output> {
 
         log.info("processing usecase 1");
 
-        oneTwoService.doSomethingInvolvingBothAggregates(repo001, repo002, aggOneRef, aggTwoRef, 1);
+        oneTwoService.doSomethingInvolvingBothAggregates(agg01, agg02, 1);
 
         output = new UC001Output();
         return output;

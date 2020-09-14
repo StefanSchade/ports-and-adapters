@@ -1,7 +1,7 @@
 package com.example.portsandadapters.adapter.out.persistence.map;
 
-import com.example.portsandadapters.domain.markers.AggregateRoot;
-import com.example.portsandadapters.persistence.IdentifiedObject;
+import com.example.portsandadapters.domain.contract.AggregateRoot;
+import com.example.portsandadapters.domain.contract.IdentifiedObject;
 import com.example.portsandadapters.persistence.PersistenceAbstraction;
 
 import java.util.HashMap;
@@ -16,14 +16,17 @@ public class GenericMapService<V extends IdentifiedObject & AggregateRoot, K> im
     protected Map<Long, V> map = new HashMap<>();
 
     public Set<V> findAll() {
+
         return new HashSet<>(map.values());
     }
 
     public V findByID(K key) {
+
         return map.get(key);
     }
 
     public V save(V value) {
+
         if (value.getId()==null) {
             assignNewId(value);
         }
@@ -32,16 +35,20 @@ public class GenericMapService<V extends IdentifiedObject & AggregateRoot, K> im
     }
 
     private void assignNewId(V value) {
+
         value.setId(idcounter++);
     }
 
     public void delete(V value) {
+
         map.entrySet()
            .removeIf(entry -> entry.getValue()
                                    .equals(value));
     }
 
     public void deleteByID(K key) {
+
         map.remove(key);
     }
+
 }

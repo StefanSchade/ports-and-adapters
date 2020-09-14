@@ -1,6 +1,6 @@
 package com.example.portsandadapters.application.services.command.sprint.uc001;
 
-import com.example.portsandadapters.domain.markers.inbound.command.CommandOutput;
+import com.example.portsandadapters.domain.contract.inbound.command.CommandOutput;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>ports-outbound-persistence</artifactId>
+            <artifactId>domain-contract</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

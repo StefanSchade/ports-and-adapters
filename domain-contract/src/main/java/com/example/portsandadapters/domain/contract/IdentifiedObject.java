@@ -1,4 +1,4 @@
-package com.example.portsandadapters.persistence;
+package com.example.portsandadapters.domain.contract;
 
 import lombok.AccessLevel;
 import lombok.Getter;

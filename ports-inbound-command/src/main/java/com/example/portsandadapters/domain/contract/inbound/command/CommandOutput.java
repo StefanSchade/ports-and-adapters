@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.markers.inbound.command;
+package com.example.portsandadapters.domain.contract.inbound.command;
 
 import lombok.Getter;
 import lombok.Setter;

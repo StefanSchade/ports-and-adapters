@@ -1,8 +1,8 @@
 package com.example.portsandadapters.domain.model.two;
 
-import com.example.portsandadapters.domain.markers.AggregateRoot;
-import com.example.portsandadapters.domain.markers.Entity;
-import com.example.portsandadapters.persistence.IdentifiedObject;
+import com.example.portsandadapters.domain.contract.AggregateRoot;
+import com.example.portsandadapters.domain.contract.Entity;
+import com.example.portsandadapters.domain.contract.IdentifiedObject;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

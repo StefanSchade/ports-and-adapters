@@ -1,6 +1,6 @@
-package com.example.portsandadapters.domain.markers.inbound.command.impl;
+package com.example.portsandadapters.domain.contract.inbound.command.impl;
 
-import com.example.portsandadapters.domain.markers.inbound.command.CommandInput;
+import com.example.portsandadapters.domain.contract.inbound.command.CommandInput;
 
 public class TimeoutRetryDecorator<T extends CommandInput>  {
 

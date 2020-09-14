@@ -11,33 +11,38 @@
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>application</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>ports-inbound-command</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
             <artifactId>adapter-persistence-jpa</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>adapter-persistence-map</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>adapter-wsprovider-rest</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>ports-outbound-persistence</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>domain-model</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <artifactId>ports-inbound-command</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>application</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
             <artifactId>domain-services</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -16,13 +16,13 @@
     </parent>
 
     <modules>
-        <module>domain-marker</module>
+        <module>domain-contract</module>
         <module>ports-outbound-persistence</module>
         <module>ports-inbound-command</module>
         <module>domain-model</module>
         <module>domain-services</module>
         <module>application</module>
-        <module>adapter-command-rest</module>
+        <module>adapter-wsprovider-rest</module>
         <module>adapter-persistence-jpa</module>
         <module>adapter-persistence-map</module>
         <module>configuration</module>
