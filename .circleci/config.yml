@@ -34,3 +34,13 @@ jobs:
 
       # run tests!
       - run: mvn integration-test
+
+      - run:
+          name: npm run build
+          command: |
+            npm run build
+
+      - run:
+          name: npm run build
+          command: |
+            npm run build
