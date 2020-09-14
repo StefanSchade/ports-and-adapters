@@ -25,6 +25,7 @@
         <module>adapter-wsprovider-rest</module>
         <module>adapter-persistence-jpa</module>
         <module>adapter-persistence-map</module>
+        <module>adapter-messaging-jms</module>
         <module>configuration</module>
     </modules>
 
@@ -46,6 +47,23 @@
     <dependencyManagement>
         <dependencies>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-artemis</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>artemis-server</artifactId>
+                <version>${artemis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>artemis-jms-server</artifactId>
+                <version>${artemis.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
