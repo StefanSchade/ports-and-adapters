@@ -3,7 +3,7 @@ package com.example.portsandadapters.configuration;
 import com.example.portsandadapters.adapter.out.persistence.jpa.SprintJPAService;
 import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
 import com.example.portsandadapters.domain.model.two.GenericAggregateRoot002;
-import com.example.portsandadapters.persistence.PersistenceAbstraction;
+import com.example.portsandadapters.port.repository.PersistenceAbstraction;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;

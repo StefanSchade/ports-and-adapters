@@ -3,7 +3,7 @@ package com.example.portsandadapters.configuration;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
 import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
 import com.example.portsandadapters.domain.model.two.GenericAggregateRoot002;
-import com.example.portsandadapters.persistence.PersistenceAbstraction;
+import com.example.portsandadapters.port.repository.PersistenceAbstraction;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:command.properties")
+@PropertySource("classpath:wsprovider.properties")
 @RequiredArgsConstructor
 public class CommandConfig {
 

@@ -1,4 +1,4 @@
-package com.example.portsandadapters.persistence;
+package com.example.portsandadapters.port.repository;
 
 import com.example.portsandadapters.domain.contract.AggregateRoot;
 

@@ -17,7 +17,7 @@
 
     <modules>
         <module>domain-contract</module>
-        <module>ports-outbound-persistence</module>
+        <module>ports-outbound-repository</module>
         <module>ports-inbound-command</module>
         <module>domain-model</module>
         <module>domain-services</module>

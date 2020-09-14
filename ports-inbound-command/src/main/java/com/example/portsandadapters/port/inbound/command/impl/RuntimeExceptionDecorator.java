@@ -1,8 +1,8 @@
-package com.example.portsandadapters.domain.contract.inbound.command.impl;
+package com.example.portsandadapters.port.inbound.command.impl;
 
-import com.example.portsandadapters.domain.contract.inbound.command.CommandHandler;
-import com.example.portsandadapters.domain.contract.inbound.command.CommandInput;
-import com.example.portsandadapters.domain.contract.inbound.command.CommandOutput;
+import com.example.portsandadapters.port.inbound.command.CommandHandler;
+import com.example.portsandadapters.port.inbound.command.CommandInput;
+import com.example.portsandadapters.port.inbound.command.CommandOutput;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

@@ -2,7 +2,7 @@ package com.example.portsandadapters.adapter.out.persistence.map;
 
 import com.example.portsandadapters.domain.contract.AggregateRoot;
 import com.example.portsandadapters.domain.contract.IdentifiedObject;
-import com.example.portsandadapters.persistence.PersistenceAbstraction;
+import com.example.portsandadapters.port.repository.PersistenceAbstraction;
 
 import java.util.HashMap;
 import java.util.HashSet;
