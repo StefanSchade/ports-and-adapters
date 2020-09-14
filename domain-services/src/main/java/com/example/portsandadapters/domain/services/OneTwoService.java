@@ -1,7 +1,7 @@
 package com.example.portsandadapters.domain.services;
 
-import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
-import com.example.portsandadapters.domain.model.two.GenericAggregateRoot002;
+import com.example.portsandadapters.domain.model.customer.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.model.customer.two.GenericAggregateRoot002;
 
 public class OneTwoService {
 

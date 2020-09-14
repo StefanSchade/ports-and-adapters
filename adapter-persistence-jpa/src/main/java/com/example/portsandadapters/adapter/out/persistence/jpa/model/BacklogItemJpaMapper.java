@@ -1,6 +1,6 @@
 package com.example.portsandadapters.adapter.out.persistence.jpa.model;
 
-import com.example.portsandadapters.domain.model.one.GenericEntity001;
+import com.example.portsandadapters.domain.model.customer.one.GenericEntity001;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

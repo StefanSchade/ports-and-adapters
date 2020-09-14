@@ -1,4 +1,4 @@
-package com.example.portsandadapters.domain.model.one;
+package com.example.portsandadapters.domain.model.customer.one;
 
 import com.example.portsandadapters.domain.contract.AggregateRoot;
 import com.example.portsandadapters.domain.contract.Entity;

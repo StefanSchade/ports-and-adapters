@@ -3,7 +3,7 @@ package com.example.portsandadapters.adapter.in.wsprovicer.rest;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Input;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Output;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.model.customer.one.GenericAggregateRoot001;
 import com.example.portsandadapters.port.repository.PersistenceAbstraction;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

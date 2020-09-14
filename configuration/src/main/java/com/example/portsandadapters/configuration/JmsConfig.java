@@ -16,12 +16,13 @@ public class JmsConfig {
 
     @Bean
     public MessageConverter messageConverter() {
-
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
         converter.setTargetType(MessageType.TEXT);
         converter.setTypeIdPropertyName("_type");
         return converter;
     }
+
+    // test message in adapter
 
     @Bean
     TestMessageSender TestMessageSender(JmsTemplate jmsTemplate) {
@@ -33,6 +34,8 @@ public class JmsConfig {
     TestMessageListener TestMessageListener() {
         return new TestMessageListener();
     }
+
+    //
 
 
 }

@@ -1,7 +1,7 @@
 package com.example.portsandadapters.adapter.in.wsprovicer.rest;
 
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.model.customer.one.GenericAggregateRoot001;
 import com.example.portsandadapters.port.repository.PersistenceAbstraction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

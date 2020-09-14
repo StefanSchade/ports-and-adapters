@@ -17,8 +17,8 @@
 
     <modules>
         <module>domain-contract</module>
-        <module>ports-outbound-repository</module>
-        <module>ports-inbound-command</module>
+        <module>port-repository</module>
+        <module>port-command</module>
         <module>domain-model</module>
         <module>domain-services</module>
         <module>application</module>
@@ -26,6 +26,8 @@
         <module>adapter-persistence-jpa</module>
         <module>adapter-persistence-map</module>
         <module>adapter-messaging-jms</module>
+        <module>port-message-subscribe</module>
+        <module>port-message-publish</module>
         <module>configuration</module>
     </modules>
 

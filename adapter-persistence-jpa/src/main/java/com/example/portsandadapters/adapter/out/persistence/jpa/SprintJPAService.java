@@ -5,7 +5,7 @@ import com.example.portsandadapters.adapter.out.persistence.jpa.model.BacklogIte
 import com.example.portsandadapters.adapter.out.persistence.jpa.model.BacklogItemJpaMapper;
 import com.example.portsandadapters.adapter.out.persistence.jpa.model.SprintJpa;
 import com.example.portsandadapters.adapter.out.persistence.jpa.model.SprintJpaMapper;
-import com.example.portsandadapters.domain.model.one.GenericAggregateRoot001;
+import com.example.portsandadapters.domain.model.customer.one.GenericAggregateRoot001;
 import com.example.portsandadapters.port.repository.PersistenceAbstraction;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
