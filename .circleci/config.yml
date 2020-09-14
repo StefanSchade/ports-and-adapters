@@ -18,6 +18,12 @@ jobs:
     steps:
       - checkout
 
+      - run:
+        name: "Update Node.js and npm"
+        command: |
+          curl -sSL "https://nodejs.org/dist/v11.10.0/node-v11.10.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v11.10.0-linux-x64/bin/node
+          curl https://www.npmjs.com/install.sh | sudo bash
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -34,13 +40,3 @@ jobs:
 
       # run tests!
       - run: mvn integration-test
-
-      - run:
-          name: npm run build
-          command: |
-            npm run build
-
-      - run:
-          name: npm run build
-          command: |
-            npm run build
