@@ -17,7 +17,7 @@ import javax.persistence.ManyToOne;
 @Data
 @Entity
 @NoArgsConstructor
-public class BacklogItemJpa {
+public class CustomerJpa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,9 +25,10 @@ public class BacklogItemJpa {
 
     @Column(nullable = false)
     @NonNull
-    public String name;
+    public String firstName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "sprint", nullable = true)
-    public SprintJpa sprint;
+    @Column(nullable = false)
+    @NonNull
+    public String lastName;
+
 }

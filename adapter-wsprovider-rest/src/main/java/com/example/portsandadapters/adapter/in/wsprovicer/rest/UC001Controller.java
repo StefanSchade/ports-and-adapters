@@ -3,7 +3,6 @@ package com.example.portsandadapters.adapter.in.wsprovicer.rest;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Input;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Output;
 import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
-import com.example.portsandadapters.domain.model.customer.one.GenericAggregateRoot001;
 import com.example.portsandadapters.port.repository.PersistenceAbstraction;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,19 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UC001Controller {
 
-    private final UC001Service handler;
+//    private final UC001Service handler;
 
-    private final PersistenceAbstraction<GenericAggregateRoot001, Long> pa;
+//    private final PersistenceAbstraction<GenericAggregateRoot001, Long> pa;
 
     @PostMapping("/endpoint1")
 
-    public ResponseEntity<GenericAggregateRoot001> endpoint1(@RequestBody UC001Input input) {
+    public ResponseEntity<String> endpoint1(@RequestBody UC001Input input) {
 
         log.info("input received " + input);
 
-        UC001Output output = handler.process(input);
+//        UC001Output output = handler.process(input);
 
-        GenericAggregateRoot001 genericAggregateRoot001 = null; //output.getResponseObject();
+//        GenericAggregateRoot001 genericAggregateRoot001 = null; //output.getResponseObject();
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("examplekey", "examplevalue");
@@ -47,7 +46,7 @@ public class UC001Controller {
 
         return ResponseEntity.ok()
                              .headers(responseHeaders)
-                             .body(genericAggregateRoot001);
+                             .body("genericAggregateRoot001");
 //        }
     }
 

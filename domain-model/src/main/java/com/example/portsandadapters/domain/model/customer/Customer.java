@@ -6,12 +6,8 @@ import com.example.portsandadapters.domain.contract.IdentifiedObject;
 public class Customer extends IdentifiedObject implements AggregateRoot {
 
     private String firstName;
-    private String surName;
+    private String lastName;
     private String customerID;
 
-    protected Customer(IdentifiedObjectBuilder<?, ?> b) {
-
-        super(b);
-    }
 
 }
