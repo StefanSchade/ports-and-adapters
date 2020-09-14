@@ -34,3 +34,6 @@ jobs:
 
       # run tests!
       - run: mvn integration-test
+      - npm: echo Running npm command
+             cd frontend
+             npm

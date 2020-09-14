@@ -1,9 +1,9 @@
 {
-  "name": "travel-site",
+  "name": "myapp",
   "version": "1.0.0",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack",
+    "dev": "node_modules/.bin/webpack-dev-server",
+    "build": "node_modules/.bin/webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
