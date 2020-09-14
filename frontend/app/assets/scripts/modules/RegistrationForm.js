@@ -1,19 +1,19 @@
 import React, {useState} from 'react'
 
 function RegistrationForm (props) {
-  const [state , setState] = useState({
-        username : "",
-        email : "",
-        password : ""
-    })
+  const [state, setState] = useState({
+    username: '',
+    email: '',
+    password: ''
+  })
 
-    const handleChange = (e) => {
-        const {id , value} = e.target
-        setState(prevState => ({
-            ...prevState,
-            [id] : value
-        }))
-    }
+  const handleChange = (e) => {
+    const {id, value} = e.target
+    setState(prevState => ({
+      ...prevState,
+      [id]: value
+    }))
+  }
 
   return (
     <form>
