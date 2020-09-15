@@ -8,8 +8,10 @@
         <version>0.0.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
 
-    <artifactId>port-msg-publish</artifactId>
+    <artifactId>ports-outbound-messaging</artifactId>
+
 
 
 </project>
