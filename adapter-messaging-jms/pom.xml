@@ -63,7 +63,7 @@
 
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>ports-outbound-persistence</artifactId>
+            <artifactId>port-outbound-repository</artifactId>
             <version>${project.version}</version>
         </dependency>
 
