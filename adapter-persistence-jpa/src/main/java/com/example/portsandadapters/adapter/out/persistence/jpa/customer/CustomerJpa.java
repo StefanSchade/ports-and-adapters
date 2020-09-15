@@ -1,4 +1,4 @@
-package com.example.portsandadapters.adapter.out.persistence.jpa.model;
+package com.example.portsandadapters.adapter.out.persistence.jpa.customer;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,11 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import java.util.Date;
 
 @Slf4j
 @Data
@@ -25,10 +24,18 @@ public class CustomerJpa {
 
     @Column(nullable = false)
     @NonNull
+    public String customerId;
+
+    @Column(nullable = false)
+    @NonNull
     public String firstName;
 
     @Column(nullable = false)
     @NonNull
     public String lastName;
+
+    @Column(nullable = true) public int creditCardNumber;
+
+    @Column(nullable = true) public Date creditCardExpiryDate;
 
 }

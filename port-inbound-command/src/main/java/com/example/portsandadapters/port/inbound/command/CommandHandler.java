@@ -1,9 +1,9 @@
 package com.example.portsandadapters.port.inbound.command;
 
-public abstract class CommandHandler<I extends CommandInput, O extends CommandOutput> {
+public abstract class CommandHandler<REQUEST extends CommandRequest, RESPONSE extends CommandResponse> {
 
-    protected O output;
+    protected RESPONSE output;
 
-    public abstract O process(I input);
+    public abstract RESPONSE handle(REQUEST input);
 
 }

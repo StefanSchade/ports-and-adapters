@@ -1,6 +1,8 @@
 package com.example.portsandadapters.configuration;
 
-import com.example.portsandadapters.application.services.command.sprint.uc001.UC001Service;
+import com.example.portsandadapters.application.command.customer.create.CreateCustomerHandler;
+import com.example.portsandadapters.domain.model.customer.Customer;
+import com.example.portsandadapters.port.repository.Repository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,15 +12,11 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:wsprovider.properties")
 @RequiredArgsConstructor
 public class CommandConfig {
-//
-//    @NonNull private PersistenceAbstraction<GenericAggregateRoot001, Long> ag001Repo;
-//
-//    @NonNull private PersistenceAbstraction<GenericAggregateRoot002, Long> ag002Repo;
 
-//    @Bean
-//    public UC001Service Ag001_Com001_LongName_Service() {
-//
-//        return new UC001Service(ag001Repo, ag002Repo);
-//    }
+    @Bean
+    public CreateCustomerHandler createCustomerHandler(Repository<Customer, Long> cusrepo) {
+
+        return new CreateCustomerHandler(cusrepo);
+    }
 
 }

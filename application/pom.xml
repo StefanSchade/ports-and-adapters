@@ -18,7 +18,7 @@
         </dependency>
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>ports-inbound-command</artifactId>
+            <artifactId>port-inbound-command</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

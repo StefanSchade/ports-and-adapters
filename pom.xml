@@ -21,9 +21,9 @@
         <module>domain-services</module>
         <module>application</module>
         <module>port-inbound-command</module>
-        <module>port-inbound-messaging</module>
+        <module>port-inbound-message</module>
         <module>port-outbound-repository</module>
-        <module>port-outbound-messaging</module>
+        <module>port-outbound-message</module>
         <module>adapter-wsprovider-rest</module>
         <module>adapter-persistence-jpa</module>
         <module>adapter-persistence-map</module>

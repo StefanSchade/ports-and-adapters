@@ -4,7 +4,7 @@ import com.example.portsandadapters.domain.contract.AggregateRoot;
 
 import java.util.Set;
 
-public interface PersistenceAbstraction<V extends AggregateRoot, K> {
+public interface Repository<V extends AggregateRoot, K> {
 
     Set<V> findAll();
 
