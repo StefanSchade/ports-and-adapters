@@ -33,10 +33,6 @@
             <artifactId>artemis-jms-server</artifactId>
         </dependency>
 
-
-
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -56,12 +52,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
             <groupId>com.example</groupId>
             <artifactId>application</artifactId>
             <version>${project.version}</version>
@@ -69,7 +59,7 @@
 
         <dependency>
             <groupId>com.example</groupId>
-            <artifactId>ports-outbound-persistence</artifactId>
+            <artifactId>port-outbound-repository</artifactId>
             <version>${project.version}</version>
         </dependency>
 

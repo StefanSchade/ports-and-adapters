@@ -16,8 +16,6 @@ public class CreateCustomerHandler extends CommandHandler<CreateCustomerRequest,
     @Override
     public CreateCustomerResponse handle(CreateCustomerRequest request) {
 
-        request.getFirstName();
-
         Customer customerTemplate = new CustomerBuilder().firstName(request.getFirstName())
                                                          .lastName(request.getLastName())
                                                          .build();

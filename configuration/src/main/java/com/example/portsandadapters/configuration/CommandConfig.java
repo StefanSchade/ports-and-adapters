@@ -15,7 +15,6 @@ public class CommandConfig {
 
     @Bean
     public CreateCustomerHandler createCustomerHandler(Repository<Customer, Long> cusrepo) {
-
         return new CreateCustomerHandler(cusrepo);
     }
 

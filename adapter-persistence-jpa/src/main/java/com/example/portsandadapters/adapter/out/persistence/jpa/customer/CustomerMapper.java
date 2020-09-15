@@ -6,33 +6,31 @@ import com.example.portsandadapters.domain.model.customer.CustomerBuilder;
 
 public class CustomerMapper {
 
-    CustomerJpa domainToJpa(Customer customer) {
+  CustomerJpa domainToJpa(Customer customer) {
 
-        return domainToJpa(customer, customer.getCreditCard());
+    return domainToJpa(customer, customer.getCreditCard());
+  }
+
+  CustomerJpa domainToJpa(Customer customer, CreditCard creditCard) {
+
+    CustomerJpa customerJpa = new CustomerJpa();
+    customerJpa.setCustomerId(customer.getCustomerId());
+    customerJpa.setFirstName(customer.getFirstName());
+    customerJpa.setLastName(customer.getLastName());
+    if (customer.getCreditCard() != null) {
+      customerJpa.setCreditCardNumber(customer.getCreditCard().getNumber());
+      customerJpa.setCreditCardExpiryDate(customer.getCreditCard().getExpiryDate());
     }
+    return customerJpa;
+  }
 
-    CustomerJpa domainToJpa(Customer customer, CreditCard creditCard) {
+  Customer jpaToDomain(CustomerJpa customerJpa) {
 
-        CustomerJpa customerJpa = new CustomerJpa();
-        customerJpa.setCustomerId(customer.getCustomerId());
-        customerJpa.setFirstName(customer.getFirstName());
-        customerJpa.setLastName(customer.getLastName());
-        customerJpa.setCreditCardNumber(customer.getCreditCard()
-                                                .getNumber());
-        customerJpa.setCreditCardExpiryDate(customer.getCreditCard()
-                                                    .getExpiryDate());
-        return customerJpa;
-
-    }
-
-    Customer jpaToDomain(CustomerJpa customerJpa) {
-
-        return new CustomerBuilder().firstName(customerJpa.firstName)
-                                    .lastName(customerJpa.lastName)
-                                    .creditCardNumber(customerJpa.creditCardNumber)
-                                    .creditCardExpiryDate(customerJpa.creditCardExpiryDate)
-                                    .build();
-
-    }
-
+    return new CustomerBuilder()
+        .firstName(customerJpa.firstName)
+        .lastName(customerJpa.lastName)
+        .creditCardNumber(customerJpa.creditCardNumber)
+        .creditCardExpiryDate(customerJpa.creditCardExpiryDate)
+        .build();
+  }
 }

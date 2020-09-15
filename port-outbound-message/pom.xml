@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
 
-    <artifactId>ports-outbound-message</artifactId>
-
+    <artifactId>port-outbound-message</artifactId>
 
 </project>
