@@ -4,13 +4,13 @@ import com.example.portsandadapters.domain.contract.Entity;
 
 import java.util.Date;
 
-public class CreditCard implements Entity {
+public class CreditCardDetails implements Entity {
 
     private final int number;
 
     private final Date expiryDate;
 
-    public CreditCard(int number, Date expiryDate) {
+    public CreditCardDetails(int number, Date expiryDate) {
 
         this.number = number;
         this.expiryDate = expiryDate;

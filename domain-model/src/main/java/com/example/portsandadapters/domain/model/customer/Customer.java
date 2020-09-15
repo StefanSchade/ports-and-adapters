@@ -5,45 +5,35 @@ import com.example.portsandadapters.domain.contract.IdentifiedObject;
 
 public class Customer extends IdentifiedObject implements AggregateRoot {
 
-    private final String firstName;
+  private final String firstName;
+  private final String lastName;
+  private final String customerId;
+  private CreditCardDetails creditCardDetails;
 
-    private final String lastName;
+  protected Customer(String firstName, String lastName, String customerId, Long id) {
+    super(id);
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.customerId = customerId;
+  }
 
-    private final String customerId;
+  public String getFirstName() {
+    return firstName;
+  }
 
-    private CreditCard creditCard;
+  public String getLastName() {
+    return lastName;
+  }
 
-    protected Customer(String firstName, String lastName, String customerId, Long id) {
+  public String getCustomerId() {
+    return customerId;
+  }
 
-        super(id);
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.customerId = customerId;
-    }
+  public CreditCardDetails getCreditCardDetails() {
+    return creditCardDetails;
+  }
 
-    public String getFirstName() {
-
-        return firstName;
-    }
-
-    public String getLastName() {
-
-        return lastName;
-    }
-
-    public String getCustomerId() {
-
-        return customerId;
-    }
-
-    public CreditCard getCreditCard() {
-
-        return creditCard;
-    }
-
-    public void setCreditCard(CreditCard creditCard) {
-
-        this.creditCard = creditCard;
-    }
-
+  public void setCreditCardDetails(CreditCardDetails creditCardDetails) {
+    this.creditCardDetails = creditCardDetails;
+  }
 }

@@ -29,7 +29,7 @@ public class CustomerController {
         CreateCustomerResponse createCustomerResponse = createCustomerHandler.handle(request);
 
         HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("customer", "examplevalue");
+        responseHeaders.set("com/example/portsandadapters/domain/model/customer", "examplevalue");
 
         return ResponseEntity.ok()
                              .headers(responseHeaders)
