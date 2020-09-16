@@ -1,25 +1,36 @@
 package com.example.portsandadapters.domain.contract;
 
+import com.example.portsandadapters.domain.contract.utils.RandomUtil;
+
 public abstract class IdentifiedObject {
 
-  protected final Long id;
+  private static final int KEYLENGTH = 50;
+
+  protected final String objectIdentifier;
+
+  protected final Long databaseId;
 
   protected final Boolean objectIsPersisted;
 
-  protected IdentifiedObject(Long id) {
+  protected IdentifiedObject(Long databaseId, String identityPreviousObjectToBeRestored) {
 
-    if (id == null) {
-      this.id = null;
+    if (identityPreviousObjectToBeRestored == null) {
+      objectIdentifier = RandomUtil.generateRandomString(KEYLENGTH);
+    } else {
+      objectIdentifier = identityPreviousObjectToBeRestored;
+    }
+
+    if (databaseId == null) {
+      this.databaseId = null;
       this.objectIsPersisted = false;
     } else {
-      this.id = id;
+      this.databaseId = databaseId;
       this.objectIsPersisted = true;
     }
   }
 
-  public Long getId() {
-
-    return id;
+  public Long getDatabaseId() {
+    return databaseId;
   }
 
   public Boolean getObjectIsPersisted() {

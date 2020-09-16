@@ -19,9 +19,10 @@ public class Order extends IdentifiedObject implements AggregateRoot {
       String oderId,
       List<LineItem> lineItems,
       String shippingAddress,
-      String billingAddress) {
+      String billingAddress,
+      String objectIdentity) {
 
-    super(id);
+    super(id, objectIdentity);
     this.customerId = customerId;
     this.oderId = oderId;
     this.lineItems = lineItems;

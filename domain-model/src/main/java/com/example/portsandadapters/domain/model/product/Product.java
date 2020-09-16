@@ -10,7 +10,8 @@ public class Product extends IdentifiedObject implements AggregateRoot {
   private String description;
   private Double price;
 
-  protected Product(String productId, String name, String description, Long databaseId) {
-    super(databaseId);
+  protected Product(String productId, String name, String description, Long databaseId, String objectIdentity) {
+    super(databaseId, objectIdentity);
   }
+
 }

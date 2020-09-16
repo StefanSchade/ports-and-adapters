@@ -22,7 +22,7 @@ public class CreateCustomerHandler extends CommandHandler<CreateCustomerRequest,
 
         Customer customer = customerRepository.save(customerTemplate);
 
-        log.info("persisted entity with database id " + customer.getId() + " and customer id " +
+        log.info("persisted entity with database id " + customer.getDatabaseId() + " and customer id " +
                 customer.getCustomerId());
 
         CreateCustomerResponse createCustomerResponse = new CreateCustomerResponse();

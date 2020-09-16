@@ -1,7 +1,5 @@
 package com.example.portsandadapters.domain.model.customer;
 
-import com.example.portsandadapters.domain.contract.utils.RandomUtil;
-
 import java.util.Date;
 
 public class CustomerBuilder {
@@ -12,7 +10,13 @@ public class CustomerBuilder {
   private String lastName;
   private int creditCardNumber;
   private Date creditCardExpiryDate;
+  private String preexistingCustomerID;
   private Long databaseId;
+
+  public CustomerBuilder preexistingCustomerID(String preexistingCustomerID) {
+    this.preexistingCustomerID = preexistingCustomerID;
+    return this;
+  }
 
   public CustomerBuilder databaseId(Long databaseId) {
     this.databaseId = databaseId;
@@ -40,13 +44,17 @@ public class CustomerBuilder {
   }
 
   public Customer build() {
-    String customerId = new RandomUtil().generateUserId(USER_ID_LENGTH);
-    Customer newCustomer = new Customer(firstName, lastName, customerId, databaseId);
+    Customer newCustomer;
+
+    newCustomer =
+        new Customer(this.firstName, this.lastName, this.databaseId, this.preexistingCustomerID);
+
     if (this.creditCardExpiryDate != null & this.creditCardNumber != 0) {
       CreditCardDetails card =
           new CreditCardDetails(this.creditCardNumber, this.creditCardExpiryDate);
       newCustomer.setCreditCardDetails(card);
     }
+
     return newCustomer;
   }
 }

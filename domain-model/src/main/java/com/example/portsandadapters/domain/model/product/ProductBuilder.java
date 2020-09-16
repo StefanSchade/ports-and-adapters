@@ -1,7 +1,5 @@
 package com.example.portsandadapters.domain.model.product;
 
-import com.example.portsandadapters.domain.contract.utils.RandomUtil;
-
 public class ProductBuilder {
 
   public static final int PRODUCT_ID_LENGTH = 20;
@@ -11,6 +9,7 @@ public class ProductBuilder {
   private Double price;
   private String productId;
   private Long databaseId;
+  private String identityOfPreviouslyCreatedObject;
 
   public ProductBuilder name(String name) {
     this.name = name;
@@ -32,9 +31,13 @@ public class ProductBuilder {
     return this;
   }
 
+  public ProductBuilder copyIdentityOfPreviouslyCreatedObject(String identityOfPreviouslyCreatedObject) {
+    this.identityOfPreviouslyCreatedObject = identityOfPreviouslyCreatedObject;
+    return this;
+  }
+
   public Product build() {
-    String productId = new RandomUtil().generateUserId(PRODUCT_ID_LENGTH);
-    Product newProduct = new Product(name, description, productId, databaseId);
+    Product newProduct = new Product(productId, name, description, databaseId, identityOfPreviouslyCreatedObject);
     return newProduct;
   }
 }

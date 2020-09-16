@@ -31,10 +31,10 @@ public class GenericMapService<V extends IdentifiedObject & AggregateRoot, K> im
     @Override
     public V save(V value) {
 
-        if (value.getId()==null) {
+        if (value.getDatabaseId()==null) {
             assignNewId(value);
         }
-        map.put(value.getId(), value);
+        map.put(value.getDatabaseId(), value);
         return value;
     }
 
