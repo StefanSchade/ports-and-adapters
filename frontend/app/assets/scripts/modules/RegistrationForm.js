@@ -1,4 +1,7 @@
 import React, {useState} from 'react'
+import axios from 'axios'
+
+const API_BASE_URL = 'api'
 
 function RegistrationForm (props) {
   const [state, setState] = useState({
@@ -23,12 +26,28 @@ function RegistrationForm (props) {
   const sendDetailsToServer = () => {
     if (state.username && state.email.length && state.password.length) {
       props.showError(null)
-      const payload = {
+      const credentials = {
         'username': state.username,
         'email': state.email,
         'password': state.password
       }
-      //TODO: send stuff to back-end
+
+      axios.post(API_BASE_URL + '/user/register', credentials)
+        .then(function (response) {
+          if (response.status === 200) {
+            setState(prevState => ({
+              ...prevState,
+              'successMessage': 'Registration successful. Redirecting to home page..'
+            }))
+            redirectToHome()
+            props.showError(null)
+          } else {
+            props.showError('Some error ocurred')
+          }
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
     } else {
       props.showError('Please enter valid username and password')
     }
