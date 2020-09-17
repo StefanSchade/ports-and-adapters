@@ -18,23 +18,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    private final CreateCustomerHandler createCustomerHandler;
+  private final CreateCustomerHandler createCustomerHandler;
 
-    @PostMapping("/create")
+  @PostMapping("/create")
+  public ResponseEntity<String> createEndpoint(@RequestBody CreateCustomerRequest request) {
+    log.info("input received ");
 
-    public ResponseEntity<String> createEndpoint(@RequestBody CreateCustomerRequest request) {
+    CreateCustomerResponse createCustomerResponse = createCustomerHandler.handle(request);
 
-        log.info("input received ");
+    HttpHeaders responseHeaders = new HttpHeaders();
+    responseHeaders.set("abc", "examplevalue");
 
-        CreateCustomerResponse createCustomerResponse = createCustomerHandler.handle(request);
-
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("com/example/portsandadapters/domain/model/customer", "examplevalue");
-
-        return ResponseEntity.ok()
-                             .headers(responseHeaders)
-                             .body(createCustomerResponse.getCustomerId());
-
-    }
-
+    return ResponseEntity.ok()
+        .headers(responseHeaders)
+        .body(createCustomerResponse.getCustomerId());
+  }
 }
